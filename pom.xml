@@ -1,22 +1,23 @@
 <?xml version="1.0"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.muskteer</groupId>
-    <artifactId>java</artifactId>
-    <version>0.0.1</version>
+    <groupId>com.data2</groupId>
+    <artifactId>art-of-coding4j</artifactId>
+    <version>0.0.5</version>
     <packaging>jar</packaging>
 
-    <name>java</name>
+    <name>art-of-coding4j</name>
     <properties>
-    	<project.javax.version>7.0</project.javax.version>
+        <project.javax.version>8.0</project.javax.version>
         <maven.test.skip>true</maven.test.skip>
         <maven.test.failure.ignore>true</maven.test.failure.ignore>
     </properties>
 
     <dependencies>
-		<!-- slf4j-->
-    	<dependency>
+        <!-- slf4j-->
+        <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>1.7.7</version>
@@ -39,7 +40,7 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>23.0</version>
+            <version>27.1-jre</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -53,20 +54,20 @@
             <scope>compile</scope>
         </dependency>
     </dependencies>
-	<build>
-		<plugins>
-    	<plugin> 
-            <groupId>org.apache.maven.plugins</groupId> 
-            <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.1</version> 
-            <configuration> 
-                <source>1.7</source> 
-                <target>1.7</target> 
-                <compilerVersion>1.7</compilerVersion>
-                <encoding>UTF-8</encoding> 
-            </configuration> 
-         </plugin> 
-    	</plugins>	
-    </build>    
-	<description>muskteer-java</description>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <compilerVersion>1.8</compilerVersion>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <description>art-of-coding4j</description>
 </project>
