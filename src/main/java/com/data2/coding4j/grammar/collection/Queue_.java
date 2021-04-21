@@ -7,12 +7,12 @@
  */
 package com.data2.coding4j.grammar.collection;
 
+import org.junit.Test;
+
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.Queue;
-
-import org.junit.Test;
 
 public class Queue_ {
     

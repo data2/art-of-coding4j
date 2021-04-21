@@ -7,13 +7,13 @@
  */
 package com.data2.coding4j.grammar.collection;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.ListIterator;
 import java.util.Stack;
 import java.util.concurrent.CopyOnWriteArrayList;
-
-import org.junit.Test;
 
 public class List_ {
     

@@ -7,11 +7,11 @@
  */
 package com.data2.coding4j.grammar.collection;
 
+import org.junit.Test;
+
 import java.util.HashMap;
 import java.util.IdentityHashMap;
 import java.util.TreeMap;
-
-import org.junit.Test;
 
 public class Map_ {
     

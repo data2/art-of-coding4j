@@ -1,13 +1,8 @@
 package com.data2.coding4j.grammar.basic;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
 import org.junit.Test;
+
+import java.io.*;
 
 /**
  * 

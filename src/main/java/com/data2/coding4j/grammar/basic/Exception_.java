@@ -1,9 +1,9 @@
 package com.data2.coding4j.grammar.basic;
 
+import org.junit.Test;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
-import org.junit.Test;
 
 /**
  * Java异常的基类为java.lang.Throwable<br/>

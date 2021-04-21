@@ -1,9 +1,9 @@
 package com.data2.coding4j.designpatterns.struts.decorator;
 
-import java.io.FileNotFoundException;
-
 import com.data2.coding4j.designpatterns.struts.decorator.impl.CeilDecorator;
 import com.data2.coding4j.designpatterns.struts.decorator.impl.FloorDecorator;
+
+import java.io.FileNotFoundException;
 
 /**
  * 装饰器模式 _主要用于为对象动态的添加功能_。

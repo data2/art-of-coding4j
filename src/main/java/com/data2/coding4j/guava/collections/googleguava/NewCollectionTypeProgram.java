@@ -1,9 +1,8 @@
 package com.data2.coding4j.guava.collections.googleguava;
 
+import com.data2.coding4j.guava.collections.ParentCollection;
 import com.data2.coding4j.guava.collections.googleguava.bean.Person;
 import com.google.common.collect.*;
-import com.data2.coding4j.guava.collections.ParentCollection;
-
 import org.junit.Test;
 
 /**
