@@ -1,0 +1,9 @@
+
+=
+java:S2189*""Add an end condition to this loop.(òÔàûˇˇˇˇˇ
+>
+java:S11483"#Use a logger to log this exception.(Ä…‘Ö˝ˇˇˇˇ
+>
+java:S1604'"(Make this anonymous inner class a lambda(…„√Æ
+\
+java:S21422"FEither re-interrupt this method or rethrow the "InterruptedException".(‰†πÄ

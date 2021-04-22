@@ -1,0 +1,14 @@
+
+>
+java:S1148!"#Use a logger to log this exception.(Ä…‘Ö˝ˇˇˇˇ
+>
+java:S1148."#Use a logger to log this exception.(Ä…‘Ö˝ˇˇˇˇ
+>
+java:S1604"(Make this anonymous inner class a lambda(…„√Æ
+>
+java:S1604("(Make this anonymous inner class a lambda(…„√Æ
+\
+java:S2142 "FEither re-interrupt this method or rethrow the "InterruptedException".(‰†πÄ
+\
+java:S2142-"FEither re-interrupt this method or rethrow the "InterruptedException".(‰†πÄ
+O	java:S8995":Do something with the "boolean" value returned by "await".(¸Õß≠
