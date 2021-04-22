@@ -17,6 +17,8 @@
 .idea/modules.xml
 .idea/vcs.xml
 .idea/workspace.xml
+.idea/*
+target/*
 target/classes/com/muskteer/java/A.class
 target/classes/com/muskteer/java/Address.class
 target/classes/com/muskteer/java/algorithm/math/PrimeAlgorithm.class
