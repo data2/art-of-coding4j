@@ -1,5 +1,6 @@
 /**
  * FileName:   QuickSort.java
+ *
  * @Description TODO
  * All rights Reserved, Code by Muskteer
  * Copyright MuskteerAthos@gmail.com
@@ -10,7 +11,7 @@ package com.data2.coding4j.algorithm.sort;
 public class QuickSort {
     public static void main(String[] args) {
 
-        int a[] = { 3, 1, 5, 7, 2, 4, 9, 6, 10, 8 };
+        int a[] = {3, 1, 5, 7, 2, 4, 9, 6, 10, 8};
         QuickSort obj = new QuickSort();
         System.out.println("初始值：");
         obj.print(a);
@@ -42,7 +43,7 @@ public class QuickSort {
             a[high] = a[low];
         }
         a[low] = key;// 此时low=high 是基准元素的位置，也是空出来的那个位置
-        return low; 
+        return low;
 
     }
 

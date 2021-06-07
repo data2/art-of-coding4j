@@ -1,5 +1,6 @@
 /**
  * FileName:   ForkJoinCalcu.java
+ *
  * @Description fork join
  * All rights Reserved, Code by Muskteer
  * Copyright MuskteerAthos@gmail.com
@@ -19,27 +20,30 @@ public class ForkJoinCalcu {
     }
 
 }
-class SumTask extends RecursiveTask<Integer>{
+
+class SumTask extends RecursiveTask<Integer> {
 
     private static final long serialVersionUID = 1L;
 
     int from;
     int to;
+
     public SumTask(int from, int to) {
         this.from = from;
         this.to = to;
     }
+
     @Override
     protected Integer compute() {
-        if(to - from < 6 ){
-            return (to + from)/2*(to-from);
+        if (to - from < 6) {
+            return (to + from) / 2 * (to - from);
         }
-        int isInteger = (to+from) % 2;
+        int isInteger = (to + from) % 2;
         int middle = 0;
-        if(isInteger == 1){
-            middle = (to + from -1 )/2;
-        }else{
-            middle = (to + from )/2;
+        if (isInteger == 1) {
+            middle = (to + from - 1) / 2;
+        } else {
+            middle = (to + from) / 2;
         }
         SumTask task1 = new SumTask(from, middle);
         SumTask task2 = new SumTask(middle, to);
@@ -47,5 +51,5 @@ class SumTask extends RecursiveTask<Integer>{
         task2.fork();
         return task1.join() + task2.join();
     }
-    
+
 }

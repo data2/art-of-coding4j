@@ -8,14 +8,15 @@ package com.data2.coding4j.designpatterns;
  */
 public class SingletonPatternStaticTest {
 
-    private static class Singleton2{
-        private static SingletonPatternStaticTest single = new SingletonPatternStaticTest();
+    private SingletonPatternStaticTest() {
     }
 
-    private SingletonPatternStaticTest(){}
-
-    public SingletonPatternStaticTest getInstance(){
+    public SingletonPatternStaticTest getInstance() {
         return Singleton2.single;
+    }
+
+    private static class Singleton2 {
+        private static SingletonPatternStaticTest single = new SingletonPatternStaticTest();
     }
 
 }

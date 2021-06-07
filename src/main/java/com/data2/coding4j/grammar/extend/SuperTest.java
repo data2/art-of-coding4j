@@ -1,7 +1,7 @@
 package com.data2.coding4j.grammar.extend;
 
 public class SuperTest {
-    
+
     @org.junit.Test
     public void Test() {
         SubClassA a = new SubClassA();
@@ -16,7 +16,7 @@ class Super {
     public void execute() {
         System.out.println(i);
     }
-    
+
     public int getI() {
         return i;
     }
@@ -24,11 +24,11 @@ class Super {
 
 class SubClassA extends Super {
     private int i = 20;
-    
+
     public void execute() {
         System.out.println(i);
     }
-    
+
     public int getI() {
         return i;
     }

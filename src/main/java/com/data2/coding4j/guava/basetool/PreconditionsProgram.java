@@ -8,7 +8,7 @@ import org.junit.Test;
  */
 public class PreconditionsProgram {
     @Test
-    public void preconditions(){
+    public void preconditions() {
         //Preconditions.checkNotNull(null);//空指针异常
 
         //Preconditions.checkArgument(1 > 2);//IllegalArgumentException

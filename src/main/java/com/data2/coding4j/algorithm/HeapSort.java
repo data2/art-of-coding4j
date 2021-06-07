@@ -16,8 +16,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 @Slf4j
 public class HeapSort {
     @Test
-    public void test(){
-        
+    public void test() {
+
     }
 
 }

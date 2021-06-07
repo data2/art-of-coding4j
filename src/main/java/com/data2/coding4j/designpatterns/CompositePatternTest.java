@@ -1,7 +1,7 @@
 package com.data2.coding4j.designpatterns;
 
+import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
-import org.assertj.core.util.Lists;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,10 +13,9 @@ import java.util.List;
  * @author leewow
  * @description
  * @date 2020/9/7 下午5:14
- *
+ * <p>
  * 组合模式：复合模式描述了一组对象的处理方式与对象的单个实例相同
- *      场景：1、话费套餐包含通话+流量
- *
+ * 场景：1、话费套餐包含通话+流量
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -24,7 +23,7 @@ import java.util.List;
 public class CompositePatternTest {
 
     @Test
-    public void test(){
+    public void test() {
         PhoneTime phoneTime = new PhoneTime();
         InternetGB internetGB = new InternetGB();
         phoneTime.content();
@@ -36,11 +35,11 @@ public class CompositePatternTest {
 
     }
 
-    abstract class Content{
+    abstract class Content {
         abstract void content();
     }
 
-    class PhoneTime extends Content{
+    class PhoneTime extends Content {
 
         @Override
         public void content() {
@@ -48,7 +47,7 @@ public class CompositePatternTest {
         }
     }
 
-    class InternetGB extends Content{
+    class InternetGB extends Content {
 
         @Override
         public void content() {
@@ -56,22 +55,22 @@ public class CompositePatternTest {
         }
     }
 
-    class Composite extends Content{
+    class Composite extends Content {
 
         List<Content> list = Lists.newArrayList();
 
         @Override
         void content() {
-            for (Content c : list){
+            for (Content c : list) {
                 c.content();
             }
         }
 
-        void add(Content content){
+        void add(Content content) {
             list.add(content);
         }
 
-        void rm(Content content){
+        void rm(Content content) {
             list.remove(content);
         }
     }

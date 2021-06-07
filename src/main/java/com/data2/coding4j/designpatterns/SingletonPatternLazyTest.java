@@ -17,12 +17,13 @@ public class SingletonPatternLazyTest {
 
     static SingletonPatternLazyTest single;
 
-    private SingletonPatternLazyTest(){}
+    private SingletonPatternLazyTest() {
+    }
 
-    public static SingletonPatternLazyTest getInstance(){
-        if (single == null){
-            synchronized (SingletonPatternLazyTest.class){
-                if (single == null){
+    public static SingletonPatternLazyTest getInstance() {
+        if (single == null) {
+            synchronized (SingletonPatternLazyTest.class) {
+                if (single == null) {
                     single = new SingletonPatternLazyTest();
                 }
             }

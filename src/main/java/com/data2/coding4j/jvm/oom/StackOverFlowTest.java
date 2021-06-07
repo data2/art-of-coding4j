@@ -1,5 +1,6 @@
 /**
  * FileName:   StackOverFlowTest.java
+ *
  * @Description TODO
  * All rights Reserved, Code by Muskteer
  * Copyright MuskteerAthos@gmail.com
@@ -13,11 +14,13 @@ package com.data2.coding4j.jvm.oom;
  * 虚拟机栈、本地方法栈 溢出
  */
 public class StackOverFlowTest {
+    int k = 0;
+
     public static void main(String[] args) {
         new StackOverFlowTest().addLocalVar();
     }
-    int k = 0;
-    public void addLocalVar(){
+
+    public void addLocalVar() {
         @SuppressWarnings("unused")
         int i = k++;
         addLocalVar();//Exception in thread "main" java.lang.StackOverflowError

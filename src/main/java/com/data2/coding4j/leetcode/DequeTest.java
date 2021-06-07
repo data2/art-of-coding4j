@@ -13,7 +13,7 @@ import java.util.LinkedList;
  * @author leewow
  * @description
  * @date 2020/9/12 上午11:18
- *
+ * <p>
  * 双向队列Deque 即是队列又是栈
  */
 @RunWith(SpringRunner.class)
@@ -21,7 +21,7 @@ import java.util.LinkedList;
 @Slf4j
 public class DequeTest {
     @Test
-    public void test(){
+    public void test() {
         Deque<Integer> deque = new LinkedList();
 
         // deque 用作双向队列，两头操作

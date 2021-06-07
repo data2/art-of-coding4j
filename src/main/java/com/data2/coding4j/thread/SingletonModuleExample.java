@@ -2,9 +2,8 @@ package com.data2.coding4j.thread;
 
 /**
  * 单例模式
- * 
- * @author wanglei
  *
+ * @author wanglei
  */
 public class SingletonModuleExample {
     /**

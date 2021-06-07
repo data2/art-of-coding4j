@@ -11,7 +11,7 @@ import java.util.Stack;
  * @author leewow
  * @description
  * @date 2020/9/12 上午11:18
- *
+ * <p>
  * 用两个栈实现一个队列
  */
 @RunWith(SpringRunner.class)
@@ -20,10 +20,9 @@ import java.util.Stack;
 public class TwoStackQueueTest {
 
 
-
     /**
      * 用两个栈实现一个队列。队列的声明如下，请实现它的两个函数 appendTail 和 deleteHead ，分别完成在队列尾部插入整数和在队列头部删除整数的功能。(若队列中没有元素，deleteHead 操作返回 -1 )
-     *
+     * <p>
      * Your CQueue object will be instantiated and called as such:
      * CQueue obj = new CQueue();
      * obj.appendTail(value);
@@ -31,8 +30,8 @@ public class TwoStackQueueTest {
      */
     class CQueue {
 
-        Stack<Integer> appendStack ;
-        Stack<Integer> deleteStack ;
+        Stack<Integer> appendStack;
+        Stack<Integer> deleteStack;
 
         public CQueue() {
             appendStack = new Stack();
@@ -44,16 +43,16 @@ public class TwoStackQueueTest {
         }
 
         public int deleteHead() {
-            if (deleteStack.size() > 0 ){
+            if (deleteStack.size() > 0) {
                 return deleteStack.pop();
-            }else{
-                if(appendStack.size() > 0){
-                    while(appendStack.size()>0){
+            } else {
+                if (appendStack.size() > 0) {
+                    while (appendStack.size() > 0) {
                         deleteStack.push(appendStack.pop());
                     }
 
                     return deleteStack.pop();
-                }else{
+                } else {
                     return -1;
                 }
 

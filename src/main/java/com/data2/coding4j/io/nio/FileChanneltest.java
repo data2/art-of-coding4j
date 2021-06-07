@@ -1,5 +1,6 @@
 /**
  * FileName:   NIOTest.java
+ *
  * @Description TODO
  * All rights Reserved, Code by Muskteer
  * Copyright MuskteerAthos@gmail.com
@@ -29,16 +30,16 @@ public class FileChanneltest {
             FileChannel channel = file.getChannel();
             ByteBuffer buffer = ByteBuffer.allocate(6);
             int i = channel.read(buffer);
-            while(i != -1){
+            while (i != -1) {
                 buffer.flip();
-                while(buffer.hasRemaining()){
-                    System.out.println((char)buffer.get());
+                while (buffer.hasRemaining()) {
+                    System.out.println((char) buffer.get());
                 }
                 buffer.clear();
                 i = channel.read(buffer);
             }
         } catch (Exception e) {
-        } finally{
+        } finally {
             try {
                 file.close();
             } catch (IOException e) {

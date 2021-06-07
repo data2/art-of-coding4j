@@ -22,15 +22,15 @@ import java.lang.reflect.Method;
 public class CglibAsmEnhancerTest {
 
     @Test
-    public void test(){
+    public void test() {
         Enhancer enhancer = new Enhancer();
         enhancer.setSuperclass(CglibAsmEnhancerTest.class);
         enhancer.setClassLoader(getClass().getClassLoader());
         enhancer.setCallback(new MethodInterceptor() {
             @Override
             public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
-                log.info("调用方法:{}, 参数:{}",method.getName(),objects);
-                return methodProxy.invokeSuper(o,objects);
+                log.info("调用方法:{}, 参数:{}", method.getName(), objects);
+                return methodProxy.invokeSuper(o, objects);
             }
 
 
@@ -39,8 +39,8 @@ public class CglibAsmEnhancerTest {
         test.bingo("apple");
     }
 
-    public void bingo(String what){
-        log.info("bingo,{}",what);
+    public void bingo(String what) {
+        log.info("bingo,{}", what);
     }
 
 

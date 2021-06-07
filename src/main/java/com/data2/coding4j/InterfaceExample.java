@@ -1,4 +1,9 @@
 package com.data2.coding4j;
+
+interface A {
+    void test();
+}
+
 /***
  *
  * 接口的方法是隐式抽象的public abstract,接口的变量是常量public static final
@@ -19,21 +24,20 @@ public class InterfaceExample {
     public static void main(String[] args) {
         A a = new C();
         a.test();
-        ((C)a).hi();
+        ((C) a).hi();
     }
 }
 
-interface A{
-    void test();
-}
-abstract class B implements A{
-    public void test(){
+abstract class B implements A {
+    public void test() {
         System.out.println("A test");
     }
+
     abstract void hi();
 }
-class C extends B{
-    public void hi(){
+
+class C extends B {
+    public void hi() {
         System.out.println("C hi");
     }
 

@@ -11,11 +11,10 @@ import java.util.concurrent.Executors;
 
 /**
  * Created by wanglei on 2016/10/12.
- *
  */
 public class ConcurrencyProgram {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         // Guava封装后带有执行结束监听任务执行结束的功能
         ExecutorService executorService =
                 MoreExecutors.listeningDecorator(Executors.newFixedThreadPool(5));

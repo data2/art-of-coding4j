@@ -4,11 +4,11 @@ import org.junit.Test;
 
 /**
  * String s = new String("abc");
- * 
+ * <p>
  * String s = new String("abc")中的"abc"会先在对象池中查找是否存在值为"abc"的对象，没有则创建一个；
  * 其二，Java基础中有讲凡是遇到new关键字就会申请内存空间创建对象，所以new又创建了一个值为"abc"的对象，
  * 而s仅仅是一个引用而已，它不是对象，它指向new创建出来的"abc"对象的内存地址，该对象是在内存堆中的，而不是对象池中。
- * 
+ * <p>
  * String是不可变(final)类，每次在String对象上的操作都会生成一个新的对象；
  * StringBuffer和StringBuilder是可变的，它允许在原来对象上进行操作，而不用每次增加对象；
  * StringBuffer是线程安全的，但效率较低，而StringBuilder则不是线程安全的，效率最高。
@@ -82,11 +82,10 @@ public class StringTest {
     }
 
     /**
-     * 
-     解释内存中的栈(stack)、堆(heap)和静态区(static area)的用法。
+     * 解释内存中的栈(stack)、堆(heap)和静态区(static area)的用法。
      * 答：通常我们定义一个基本数据类型的变量，一个对象的引用，还有就是函数调用的现场保存都使用内存中的栈空间；
      * 而通过new关键字和构造器创建的对象放在堆空间； 程序中的字面量（literal）如直接书写的100、"hello"和常量都是放在静态区中。
-     * 
+     * <p>
      * 栈空间操作起来最快但是栈很小， 通常大量的对象都是放在堆空间，
      * 理论上整个内存没有被其他进程使用的空间甚至硬盘上的虚拟内存都可以被当成堆空间来使用。
      */
@@ -110,49 +109,49 @@ public class StringTest {
         System.out.println(s);
         return s;
     }
-    
+
     @Test
-    public void test8(){
-        String s1 = "abcdef";  
-        String s2 = "abcdef";  
-        String s3 = "abc"+"def";//编译期自动优化为String s3 = "abcdef";  
+    public void test8() {
+        String s1 = "abcdef";
+        String s2 = "abcdef";
+        String s3 = "abc" + "def";//编译期自动优化为String s3 = "abcdef";
         System.out.println(s1 == s2);//true  
         System.out.println(s1 == s3);  //true
         System.out.println(s2 == s3); //true
     }
-    
+
     @Test
-    public void test9(){
+    public void test9() {
         String s1 = "abc";
         String s2 = "abcdef";
-        String s3 = "abc"+"def";  
-        String s4 = s1 + "def";  
+        String s3 = "abc" + "def";
+        String s4 = s1 + "def";
         System.out.println(s2 == s3); //true 编译器优化
         System.out.println(s2 == s4);  //false 编译器无法优化
     }
-    
+
     @Test
-    public void testEnd(){
+    public void testEnd() {
         String s1 = new String("abc");
         String s2 = "abc";
         String s3 = new String("abc");
-    
+
         System.out.println(s1 == s2);//false
         System.out.println(s1 == s3);//false
         System.out.println(s2 == s3);//false
-    
+
         System.out.println(s1 == s1.intern()); //false
         System.out.println(s2 == s2.intern());// true
         System.out.println(s1.intern() == s2.intern());//true    
-    
+
         String hello = "hello";
         String hel = "hel";
         String lo = "lo";
-    
+
         System.out.println(hello == "hello");//true  
         System.out.println(hello == "hel" + "lo");//true
         System.out.println(hello == "hel" + lo);//false   
         System.out.println(hello == hel + lo);//false  
     }
-    
+
 }

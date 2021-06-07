@@ -11,7 +11,7 @@ import java.util.concurrent.Executors;
  */
 public class ExecutorServiceDemo {
     @Test
-    public void test(){
+    public void test() {
         ExecutorService executorService = Executors.newFixedThreadPool(10);
         executorService.submit(new Runnable() {
             public void run() {

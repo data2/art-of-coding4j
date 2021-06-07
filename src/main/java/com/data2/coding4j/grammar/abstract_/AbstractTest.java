@@ -3,7 +3,7 @@ package com.data2.coding4j.grammar.abstract_;
 import org.junit.Test;
 
 /***
- * 
+ *
  * 面向对象的概念中，所有的对象都是通过类来描绘的，<br/>
  * 但是反过来，并不是所有的类都是用来描绘对象的，如果一个类中没有包含足够的信息来描绘一个具体的对象，这样的类就是抽象类。
  * <hr/>
@@ -16,7 +16,7 @@ import org.junit.Test;
  * <p>
  * 3、在Java中抽象类表示的是一种继承关系，一个类只能继承一个抽象类，而一个类却可以实现多个接口。
  * <p>
- * 
+ *
  * 抽象类总结规定<br/>
  * 1. 抽象类不能被实例化(初学者很容易犯的错)，如果被实例化，就会报错，编译无法通过。只有抽象类的非抽象子类可以创建对象。<br/>
  * 2. 抽象类中不一定包含抽象方法，但是有抽象方法的类必定是抽象类。<br/>
@@ -24,7 +24,7 @@ import org.junit.Test;
  * 4. 构造方法，类方法（用static修饰的方法）不能声明为抽象方法。<br/>
  * 5. 抽象类的子类必须给出抽象类中的抽象方法的具体实现，除非该子类也是抽象类。<br/>
  * <br/>
- * 
+ *
  * 声明抽象方法会造成以下两个结果：<br/>
  * 1、如果一个类包含抽象方法，那么该类必须是抽象类。<br/>
  * 2、任何子类必须重写父类的抽象方法，或者声明自身为抽象类。<br/>
@@ -43,11 +43,11 @@ public class AbstractTest {
 
 abstract class AbstractParent {
 
-    public String name = "parent name";
-
     static {
         System.out.println("1.init static block");
     }
+
+    public String name = "parent name";
 
     {
         System.out.println("2.init non-static block");

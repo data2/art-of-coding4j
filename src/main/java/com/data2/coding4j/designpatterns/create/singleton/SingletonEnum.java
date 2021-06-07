@@ -7,13 +7,6 @@ import java.util.concurrent.Executors;
 public enum SingletonEnum {
     SINGLETON_ENUM;
     static int i = 0;
-    synchronized void incr(){
-        i = i+1;
-    }
-
-    public int getI() {
-        return i;
-    }
 
     public static void main(String[] args) throws InterruptedException {
         ExecutorService es = Executors.newFixedThreadPool(10);
@@ -34,6 +27,14 @@ public enum SingletonEnum {
         }
         latch.await();
         System.out.println(SingletonEnum.SINGLETON_ENUM.getI());
+    }
+
+    synchronized void incr() {
+        i = i + 1;
+    }
+
+    public int getI() {
+        return i;
     }
 
 }

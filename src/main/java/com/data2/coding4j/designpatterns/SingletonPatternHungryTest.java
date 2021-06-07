@@ -10,9 +10,8 @@ import org.springframework.test.context.junit4.SpringRunner;
  * @author leewow
  * @description
  * @date 2020/9/9 下午4:54
- *
+ * <p>
  * 单例模式 - 饿汉模式
- *
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -23,16 +22,16 @@ public class SingletonPatternHungryTest {
     static SingletonPatternHungryTest single = new SingletonPatternHungryTest();
 
     // 私有构造器
-    private SingletonPatternHungryTest(){
+    private SingletonPatternHungryTest() {
     }
 
     // 全局唯一访问点
-    public static SingletonPatternHungryTest getInstance(){
+    public static SingletonPatternHungryTest getInstance() {
         return single;
     }
 
     @Test
-    public void test(){
+    public void test() {
         SingletonPatternHungryTest.getInstance().toString();
     }
 

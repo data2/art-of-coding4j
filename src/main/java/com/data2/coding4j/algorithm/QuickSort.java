@@ -27,14 +27,6 @@ import java.util.Arrays;
 @SpringBootTest
 @Slf4j
 public class QuickSort {
-    @Test
-    public void test() {
-
-        int[] arr = new int[]{6,1,2,7,9,3,4,5,10,8};
-        quickSort(arr,0,9);
-
-    }
-
     /**
      * 快速排序（递归）
      * <p>
@@ -83,6 +75,14 @@ public class QuickSort {
         // 递归
         quickSort(arr, low, left - 1);
         quickSort(arr, left + 1, high);
+    }
+
+    @Test
+    public void test() {
+
+        int[] arr = new int[]{6, 1, 2, 7, 9, 3, 4, 5, 10, 8};
+        quickSort(arr, 0, 9);
+
     }
 
 }

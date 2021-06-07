@@ -16,32 +16,31 @@ import java.util.concurrent.TimeUnit;
  * @author leewow
  * @description
  * @date 2020/9/3 上午10:16
- *
+ * <p>
  * 生产者消费者实现方式 - not full put; not empty take
- *      1、Synchronize & 对象的wait\notify方法
- *      2、ReentrantLock condition
- *      3、阻塞队列BlockingQueue
- *
+ * 1、Synchronize & 对象的wait\notify方法
+ * 2、ReentrantLock condition
+ * 3、阻塞队列BlockingQueue
+ * <p>
  * 阻塞队列分类：
- *      1、ArrayBlockingQueue - 数组实现的有界队列
- *      2、PriorityBlockingQueue - 优先级阻塞队列
- *      3、DelayQueue - 延时队列
- *          场景1：缓存系统
- *          场景2：定时任务
- *          场景3：实现订单超时关闭
- *
+ * 1、ArrayBlockingQueue - 数组实现的有界队列
+ * 2、PriorityBlockingQueue - 优先级阻塞队列
+ * 3、DelayQueue - 延时队列
+ * 场景1：缓存系统
+ * 场景2：定时任务
+ * 场景3：实现订单超时关闭
+ * <p>
  * 入队方法
- *      put:队列满则阻塞
- *      offer:队列满则插入失败，返回false
- *      add:队列满则抛出异常，IllegalStateException
+ * put:队列满则阻塞
+ * offer:队列满则插入失败，返回false
+ * add:队列满则抛出异常，IllegalStateException
  * 出队方法
- *      take:队列空则阻塞，移除并返回队列头部元素
- *      poll:队列空则返回null，移除并返回队列头部元素
- *      remove: 队列空则抛出异常NoSuchElementException，移除并返回队列头部元素
- *
- *      peek：队列空则返回null，返回队列头部元素
- *      element:队列空抛出异常NoSuchElementException，返回队列头部元素
- *
+ * take:队列空则阻塞，移除并返回队列头部元素
+ * poll:队列空则返回null，移除并返回队列头部元素
+ * remove: 队列空则抛出异常NoSuchElementException，移除并返回队列头部元素
+ * <p>
+ * peek：队列空则返回null，返回队列头部元素
+ * element:队列空抛出异常NoSuchElementException，返回队列头部元素
  */
 @RunWith(SpringRunner.class)
 @Slf4j
@@ -79,9 +78,9 @@ public class BlockingQueueTest {
         pool.submit(new Runnable() {
             @Override
             public void run() {
-                while (true){
+                while (true) {
                     try {
-                        if (!queue.isEmpty()){
+                        if (!queue.isEmpty()) {
                             log.info("消费者生产:{}", queue.take());
                             Thread.sleep(2000);
                         }

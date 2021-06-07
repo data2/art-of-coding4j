@@ -23,7 +23,7 @@ public class CyclicBarrierTest {
 
     @Test
     public void test() throws InterruptedException {
-        CyclicBarrier cyclicBarrier = new CyclicBarrier(2, new Runnable(){
+        CyclicBarrier cyclicBarrier = new CyclicBarrier(2, new Runnable() {
             @Override
             public void run() {
                 log.info("对账开始辣");
@@ -31,9 +31,9 @@ public class CyclicBarrierTest {
         });
 
 
-        new Thread(new Runnable(){
+        new Thread(new Runnable() {
             @Override
-            public void run(){
+            public void run() {
                 try {
                     log.info("支付订单准备查询开始");
                     cyclicBarrier.await();
@@ -45,9 +45,9 @@ public class CyclicBarrierTest {
             }
         }).start();
 
-        new Thread(new Runnable(){
+        new Thread(new Runnable() {
             @Override
-            public void run(){
+            public void run() {
                 try {
                     log.info("退款订单准备查询开始");
                     cyclicBarrier.await();
@@ -58,9 +58,6 @@ public class CyclicBarrierTest {
                 }
             }
         }).start();
-
-
-
 
 
     }

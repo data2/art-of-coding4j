@@ -19,7 +19,7 @@ import java.util.Map;
 @Slf4j
 public class TemplateTest {
     @Test
-    public void test(){
+    public void test() {
         String[] arr = "addasd".split("a");
         System.out.println(arr.length);
 
@@ -28,13 +28,13 @@ public class TemplateTest {
 
     public char firstUniqChar(String s) {
         char[] chars = s.toCharArray();
-        Map<String,Integer> map =  new HashMap();
-        for(char c : chars){
-            map.put(c+"",map.get(c+"") == null ? 1 :map.get(c+"")+1);
+        Map<String, Integer> map = new HashMap();
+        for (char c : chars) {
+            map.put(c + "", map.get(c + "") == null ? 1 : map.get(c + "") + 1);
         }
 
-        for(char c : chars){
-            if(map.get(c + "") != null && map.get(c+"") == 1) {
+        for (char c : chars) {
+            if (map.get(c + "") != null && map.get(c + "") == 1) {
                 return c;
             }
         }

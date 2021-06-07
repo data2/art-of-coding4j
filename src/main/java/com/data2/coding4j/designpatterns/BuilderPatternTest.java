@@ -58,7 +58,7 @@ public class BuilderPatternTest {
     abstract class AbstractBuilder {
         public abstract void setKeybord();
 
-        public abstract void setUsb( );
+        public abstract void setUsb();
 
         public abstract void setScreen();
 

@@ -32,7 +32,7 @@ public class CountDownLatchTest {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                log.info("支付订单准备查询就绪，cost:{}s",3);
+                log.info("支付订单准备查询就绪，cost:{}s", 3);
                 latch.countDown();
             }
         }).start();
@@ -45,7 +45,7 @@ public class CountDownLatchTest {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                log.info("退款订单准备查询就绪，cost:{}s",2);
+                log.info("退款订单准备查询就绪，cost:{}s", 2);
                 latch.countDown();
             }
         }).start();

@@ -8,21 +8,21 @@ import java.util.Arrays;
  * @author leewow
  * @description
  * @date 2020/9/15 下午9:30
- *
+ * <p>
  * 桶排序 - 它是将数组划分到一定数量的有序的桶里，然后再对每个桶中的数据进行排序，最后再将各个桶里的数据有序的合并到一起。
- *
- *
+ * <p>
+ * <p>
  * 桶排序最好情况下使用线性时间O(n)，桶排序的时间复杂度，取决与对各个桶之间数据进行排序的时间复杂度，因为其它部分的时间复杂度都为O(n)。很显然，桶划分的越小，各个桶之间的数据越少，排序所用的时间也会越少。但相应的空间消耗就会增大。
- *
- * 最佳情况：T(n) = O(n+k)   最差情况：T(n) = O(n+k)   平均情况：T(n) = O(n2)　　
+ * <p>
+ * 最佳情况：T(n) = O(n+k)   最差情况：T(n) = O(n+k)   平均情况：T(n) = O(n2)
  * K是桶的个数
  */
 public class BucketSort extends QuickSort {
 
     @Test
     public void sort() throws Exception {
-        int[] arr = new int[]{2,5,3,8,1,0,9};
-        for (int k : bucketSort(arr,3)) {
+        int[] arr = new int[]{2, 5, 3, 8, 1, 0, 9};
+        for (int k : bucketSort(arr, 3)) {
             System.out.println(k);
         }
 
@@ -58,7 +58,7 @@ public class BucketSort extends QuickSort {
                 continue;
             }
             // 对每个桶进行排序，这里使用了排序
-            quickSort(bucket, 0 ,bucket.length-1);
+            quickSort(bucket, 0, bucket.length - 1);
             for (int value : bucket) {
                 arr[arrIndex++] = value;
             }

@@ -1,5 +1,6 @@
 /**
  * FileName:   Parent.java
+ *
  * @Description TODO
  * All rights Reserved, Code by Muskteer
  * Copyright MuskteerAthos@gmail.com
@@ -12,12 +13,15 @@ package com.data2.coding4j.grammar.abstract_.ConstrutorInit;
  *
  */
 public class Parent {
-    Print A = new Print(5);
     static Print B = new Print(1);
+
     static {
         System.out.println("2");
     }
-    Parent(){
+
+    Print A = new Print(5);
+
+    Parent() {
         System.out.println("6");
     }
 }

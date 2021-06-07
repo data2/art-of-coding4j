@@ -19,13 +19,17 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class BridgePatternTest {
 
     @Test
-    public void test(){
+    public void test() {
         Benz benz = new Benz();
         benz.setOperation(new Auto());
         benz.run();
     }
 
-    abstract class Car{
+    interface Operation {
+        void operate();
+    }
+
+    abstract class Car {
         Operation operation;
 
         public void setOperation(Operation operation) {
@@ -35,7 +39,7 @@ public class BridgePatternTest {
         abstract void run();
     }
 
-    class BMW extends Car{
+    class BMW extends Car {
 
         @Override
         void run() {
@@ -44,7 +48,7 @@ public class BridgePatternTest {
         }
     }
 
-    class Benz extends Car{
+    class Benz extends Car {
 
         @Override
         void run() {
@@ -53,12 +57,7 @@ public class BridgePatternTest {
         }
     }
 
-
-    interface Operation{
-        void operate();
-    }
-
-    class Auto implements Operation{
+    class Auto implements Operation {
 
         @Override
         public void operate() {
@@ -66,7 +65,7 @@ public class BridgePatternTest {
         }
     }
 
-    class Manu implements Operation{
+    class Manu implements Operation {
 
         @Override
         public void operate() {

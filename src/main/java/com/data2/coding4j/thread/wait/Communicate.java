@@ -31,8 +31,8 @@ class Input implements Runnable {
 }
 
 class Output implements Runnable {
-    private Res r;
     Object obj = new Object();
+    private Res r;
 
     Output(Res r) {
         this.r = r;

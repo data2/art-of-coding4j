@@ -11,6 +11,14 @@ public class ReenTrantLockExample {
 
     private ReentrantLock lock = new ReentrantLock();
 
+    public static void main(String[] args) {
+        ExecutorService es = Executors.newFixedThreadPool(10);
+        final ReenTrantLockExample obj = new ReenTrantLockExample();
+        for (int i = 0; i < 100; i++) {
+            es.submit(new CallableUU(i, obj));
+        }
+    }
+
     public int setValue() {
         lock.lock();
         try {
@@ -21,14 +29,6 @@ public class ReenTrantLockExample {
             lock.unlock();
         }
         return i;
-    }
-
-    public static void main(String[] args) {
-        ExecutorService es = Executors.newFixedThreadPool(10);
-        final ReenTrantLockExample obj = new ReenTrantLockExample();
-        for (int i = 0; i < 100; i++) {
-            es.submit(new CallableUU(i, obj));
-        }
     }
 
     static class CallableUU implements Callable<Object> {

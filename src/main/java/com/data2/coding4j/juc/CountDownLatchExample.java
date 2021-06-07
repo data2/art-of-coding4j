@@ -4,7 +4,6 @@ import java.util.concurrent.CountDownLatch;
 
 /**
  * @author wanglei
- *
  */
 public class CountDownLatchExample {
 

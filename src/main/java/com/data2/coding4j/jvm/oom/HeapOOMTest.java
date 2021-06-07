@@ -1,5 +1,6 @@
 /**
  * FileName:   Snippet.java
+ *
  * @Description TODO
  * All rights Reserved, Code by Muskteer
  * Copyright MuskteerAthos@gmail.com
@@ -16,11 +17,11 @@ import java.util.List;
  */
 public class HeapOOMTest {
     /**
-     * 
+     *
      */
     public static void main(String[] args) {
         List<Object> list = new ArrayList<Object>();
-        while(true){
+        while (true) {
             list.add(new Object());
         }
         //Exception in thread "main" java.lang.OutOfMemoryError: Java heap space

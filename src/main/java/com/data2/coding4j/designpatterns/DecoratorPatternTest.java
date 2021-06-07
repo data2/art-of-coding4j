@@ -10,7 +10,7 @@ import org.springframework.test.context.junit4.SpringRunner;
  * @author leewow
  * @description
  * @date 2020/9/7 下午4:08
- *
+ * <p>
  * 装饰器模式：保持接口，增强性能(装饰)
  */
 @RunWith(SpringRunner.class)
@@ -19,7 +19,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class DecoratorPatternTest {
 
     @Test
-    public void test(){
+    public void test() {
         SimpleIdea simpleIdea = new SimpleIdea();
         simpleIdea.coding();
 
@@ -27,11 +27,11 @@ public class DecoratorPatternTest {
         themeColorIdea.coding();
     }
 
-    interface Idea{
+    interface Idea {
         void coding();
     }
 
-    class SimpleIdea implements Idea{
+    class SimpleIdea implements Idea {
 
         @Override
         public void coding() {
@@ -42,7 +42,8 @@ public class DecoratorPatternTest {
 
     class ThemeColorIdea implements Idea {
         Idea idea;
-        ThemeColorIdea(Idea idea){
+
+        ThemeColorIdea(Idea idea) {
             this.idea = idea;
         }
 

@@ -16,8 +16,8 @@ import java.util.concurrent.atomic.AtomicLong;
 @SpringBootTest
 @Slf4j
 public class AtomicLongTest {
-    public void test(){
+    public void test() {
         AtomicLong atomicLong = new AtomicLong();
-        log.info("{}",atomicLong.incrementAndGet());
+        log.info("{}", atomicLong.incrementAndGet());
     }
 }

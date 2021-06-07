@@ -12,20 +12,24 @@ public class CloneExample {
     }
 }
 
-class Person implements Cloneable{
+class Person implements Cloneable {
     String name;
     Address addr;
+
     public Person clone() throws CloneNotSupportedException {
         Person person = (Person) super.clone();
         person.addr = this.addr.clone();
         return person;
     }
 }
-class Address implements Cloneable{
+
+class Address implements Cloneable {
     String city;
-    public Address(String city){
+
+    public Address(String city) {
         this.city = city;
     }
+
     public Address clone() throws CloneNotSupportedException {
         return (Address) super.clone();
     }

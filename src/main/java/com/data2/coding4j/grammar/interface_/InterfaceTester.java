@@ -2,8 +2,29 @@ package com.data2.coding4j.grammar.interface_;
 
 import org.junit.Test;
 
+// 人
+interface Person extends Animal, Human {
+    int AGE = 70;
+
+    void person();
+}
+
+// 人类
+interface Human {
+    int AGE = 60;
+
+    void human();
+}
+
+// 动物
+interface Animal {
+    int AGE = 50;// 默认属性是 final static = 常量
+
+    void animal();
+}
+
 /***
- * 
+ *
  * 1、接口与类相似点：<br/>
  * <br/>
  * 一个接口可以有多个方法。<br/>
@@ -11,7 +32,7 @@ import org.junit.Test;
  * 接口的字节码文件保存在 .class 结尾的文件中。<br/>
  * 接口相应的字节码文件必须在与包名称相匹配的目录结构中。<br/>
  * <br/>
- * 
+ *
  * 2、接口与类的区别：<br/>
  * <br/>
  * 接口不能用于实例化对象。<br/>
@@ -21,7 +42,7 @@ import org.junit.Test;
  * 接口不是被类继承了，而是要被类实现。<br/>
  * 接口支持多重继承。<br/>
  * <br/>
- * 
+ *
  * 3、接口特性<br/>
  * <br/>
  * 接口中每一个方法也是隐式抽象的,接口中的方法会被隐式的指定为 public abstract（只能是 public
@@ -30,7 +51,7 @@ import org.junit.Test;
  * 修饰会报编译错误。<br/>
  * 接口中的方法是不能在接口中实现的，只能由实现接口的类来实现接口中的方法。<br/>
  * <br/>
- * 
+ *
  * 4、抽象类和接口的区别<br/>
  * <br/>
  * 抽象类中的方法可以有方法体，就是能实现方法的具体功能，但是接口中的方法不行。<br/>
@@ -38,7 +59,7 @@ import org.junit.Test;
  * 接口中不能含有静态代码块以及静态方法(用 static 修饰的方法)，而抽象类是可以有静态代码块和静态方法。<br/>
  * 一个类只能继承一个抽象类，而一个类却可以实现多个接口<br/>
  * <br/>
- * 
+ *
  * 5、接口<br/>
  * 1）接口用于描述系统对外提供的所有服务,因此接口中的成员常量和方法都必须是公开(public)类型的,<br/>
  * 确保外部使用者能访问它们；<br/>
@@ -50,11 +71,11 @@ import org.junit.Test;
  * 所以：接口的方法默认是public abstract；接口中不可以定义变量即只能定义常量(加上final修饰就会变成常量)。<br/>
  * 所以接口的属性默认是public static final 常量，且必须赋初值。<br/>
  * 注意：final和abstract不能同时出现。<br/>
- * 
+ *
  * 6） 类的多重继承是不合法，但接口允许多重继承<br/>
  * Football extends Match,Sport(接口Match、Sport可能定义或者继承相同的方法)
- * 
- * 
+ *
+ *
  *
  */
 
@@ -84,25 +105,4 @@ class Tom implements Person {
         System.out.println("i want to read a book.");
     }
 
-}
-
-// 人
-interface Person extends Animal, Human {
-    int AGE = 70;
-
-    void person();
-}
-
-// 人类
-interface Human {
-    int AGE = 60;
-
-    void human();
-}
-
-// 动物
-interface Animal {
-    int AGE = 50;// 默认属性是 final static = 常量
-
-    void animal();
 }

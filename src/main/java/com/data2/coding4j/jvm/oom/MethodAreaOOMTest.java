@@ -1,5 +1,6 @@
 /**
  * FileName:   OutOfMTest.java
+ *
  * @Description TODO
  * All rights Reserved, Code by Muskteer
  * Copyright MuskteerAthos@gmail.com
@@ -21,10 +22,10 @@ public class MethodAreaOOMTest {
      * @param args
      */
     public static void main(String[] args) {
-        
+
         List<String> list = new ArrayList<String>();
         int i = 0;
-        while(true){
+        while (true) {
             list.add(String.valueOf(i++).intern());
         }
     }

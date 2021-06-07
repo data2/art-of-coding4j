@@ -12,7 +12,7 @@ import java.util.Stack;
  * @description
  * @date 2020/9/13 下午4:28
  * <p>
- *
+ * <p>
  * 反转链表
  */
 @RunWith(SpringRunner.class)
@@ -35,22 +35,22 @@ public class ReverseListNodeTest {
      * @return
      */
     public ListNode reverseList(ListNode head) {
-        if (head == null){
+        if (head == null) {
             return null;
         }
 
         Stack<ListNode> stack = new Stack();
         ListNode temp = head;
 
-        stack.push( new ListNode(temp.val));
+        stack.push(new ListNode(temp.val));
 
-        while((temp = temp.next) != null){
+        while ((temp = temp.next) != null) {
             stack.push(new ListNode(temp.val));
         }
 
         ListNode header = stack.pop();
         temp = header;
-        while(stack.size() > 0){
+        while (stack.size() > 0) {
             temp.next = stack.pop();
             temp = temp.next;
         }

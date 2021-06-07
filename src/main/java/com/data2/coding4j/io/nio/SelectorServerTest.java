@@ -1,5 +1,6 @@
 /**
  * FileName:   Selector.java
+ *
  * @Description TODO
  * All rights Reserved, Code by Muskteer
  * Copyright MuskteerAthos@gmail.com
@@ -22,9 +23,13 @@ import java.util.Iterator;
  */
 public class SelectorServerTest {
 
+    public static void main(String[] args) throws IOException {
+        new SelectorServerTest().server(9999);
+    }
+
     /**
      * 多路复用 selector
-     * 
+     *
      * IO VS NIO
      * 面向流  VS 面向缓冲区
      * 阻塞   VS 非阻塞
@@ -53,7 +58,7 @@ public class SelectorServerTest {
                     System.out.println("Accepted connection from " + client);
                     client.configureBlocking(false);
                     client.register(selector, SelectionKey.OP_WRITE | SelectionKey.OP_READ,
-                        ByteBuffer.allocate(100));
+                            ByteBuffer.allocate(100));
                 }
 
                 if (key.isReadable()) {
@@ -73,8 +78,4 @@ public class SelectorServerTest {
         }
     }
 
-    public static void main(String[] args) throws IOException {
-        new SelectorServerTest().server(9999);
-    }
-    
 }

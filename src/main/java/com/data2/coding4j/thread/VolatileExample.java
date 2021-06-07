@@ -32,7 +32,7 @@ class RMB {
     volatile long money = 99;
 
     public long get() {
-        while(money != 100){
+        while (money != 100) {
             System.out.println("没到100");
         }
         System.out.println("100了");

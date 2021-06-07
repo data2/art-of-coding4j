@@ -1,5 +1,6 @@
 /**
  * FileName:   ClinitStatic.java
+ *
  * @Description 类的初始化 Clinit
  * All rights Reserved, Code by Muskteer
  * Copyright MuskteerAthos@gmail.com
@@ -15,6 +16,7 @@ public class ClinitStaticTest {
 
 class Father1 {
     public static int a = 1;
+
     static {
         a = 2;
     }

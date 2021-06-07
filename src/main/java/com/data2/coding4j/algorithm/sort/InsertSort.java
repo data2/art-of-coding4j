@@ -1,5 +1,6 @@
 /**
  * FileName:   InsertSort.java
+ *
  * @Description TODO
  * All rights Reserved, Code by Muskteer
  * Copyright MuskteerAthos@gmail.com
@@ -22,8 +23,8 @@ public class InsertSort {
             numbers[j] = temp;
         }
     }
-    
+
     public static void main(String[] args) {
-        insertSort(new int[]{4,7,2,0,5});
+        insertSort(new int[]{4, 7, 2, 0, 5});
     }
 }

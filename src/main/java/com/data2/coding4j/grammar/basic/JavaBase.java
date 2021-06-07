@@ -6,15 +6,15 @@ public class JavaBase {
 
     @Test
     public void testName() {
-        
+
         String $n = "";
-        
+
         String _n = "";
-        
+
         String an = "";
         // String 1n = "";//不能数字开头
 
-        
+
         char s = 12;
 
         System.out.println(4 & 7);

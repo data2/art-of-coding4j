@@ -11,19 +11,18 @@ import org.springframework.test.context.junit4.SpringRunner;
  * @author leewow
  * @description
  * @date 2020/9/7 上午10:44
- *
+ * <p>
  * 责任链模式：每个具体处理器都实现统一接口，每个接受者都包含下一个接受者的引用，从而形成链
- *      使用场景：
- *          1、spring filter
- *          2、审批流程
- *
+ * 使用场景：
+ * 1、spring filter
+ * 2、审批流程
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @Slf4j
 public class ChainOfResponsibilityPatternTest {
     @Test
-    public void test(){
+    public void test() {
 
         Manager manager = new Manager();
         Director director = new Director();
@@ -37,30 +36,31 @@ public class ChainOfResponsibilityPatternTest {
 
     // 抽象处理者
     @Data
-    abstract class Handler{
+    abstract class Handler {
         protected Handler nextHandler;
+
         abstract void process();
     }
 
     // 具体处理者
-    class Manager extends Handler{
+    class Manager extends Handler {
 
         @Override
         void process() {
             boolean ok = false;
-            if (!ok){
+            if (!ok) {
                 nextHandler.process();
                 log.info("manager deal fail, throw to leader");
             }
         }
     }
 
-    class Director extends Handler{
+    class Director extends Handler {
 
         @Override
         void process() {
             boolean ok = false;
-            if (!ok){
+            if (!ok) {
                 nextHandler.process();
                 log.info("director deal fail, throw to leader");
 
@@ -68,12 +68,12 @@ public class ChainOfResponsibilityPatternTest {
         }
     }
 
-    class Ceo extends Handler{
+    class Ceo extends Handler {
 
         @Override
         void process() {
             boolean ok = false;
-            if (!ok){
+            if (!ok) {
                 log.info("cep deal fail, end");
             }
         }

@@ -5,7 +5,7 @@ public class SynchronizedExample {
     public static void main(String[] args) {
         //synchronized可以对实例对象（实例方法）和类对象（静态方法）修饰
         Person person = new Person("小一");
-        synchronized (person){
+        synchronized (person) {
             person.setName("小二");
             person.getName();
         }
@@ -14,18 +14,18 @@ public class SynchronizedExample {
     }
 }
 
-class Person{
+class Person {
     String name;
+
+    public Person(String name) {
+        this.name = name;
+    }
 
     public synchronized void setName(String name) {
         this.name = name;
     }
 
-    public Person(String name){
-        this.name = name;
-    }
-
-    public void getName(){
+    public void getName() {
         System.out.println(name);
     }
 }

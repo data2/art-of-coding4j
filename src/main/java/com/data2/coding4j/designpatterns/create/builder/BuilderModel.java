@@ -17,29 +17,42 @@ public class BuilderModel {
                 .build();
     }
 }
-class Pc{
+
+class Pc {
     String cpu;
     String keybard;
 }
-abstract class Builder{
+
+abstract class Builder {
     abstract void buildCpu();
+
     abstract void buildKeybard();
+
     abstract Pc getPc();
 }
-class PcBuilder extends Builder{
+
+class PcBuilder extends Builder {
     Pc pc = new Pc();
-    public void buildCpu(){}
-    public void buildKeybard(){}
-    public Pc getPc() { return pc;}
+
+    public void buildCpu() {
+    }
+
+    public void buildKeybard() {
+    }
+
+    public Pc getPc() {
+        return pc;
+    }
 }
-class Director{
+
+class Director {
     Builder builder;
 
-    public Director (Builder builder) {
+    public Director(Builder builder) {
         this.builder = builder;
     }
 
-    Pc getPc(){
+    Pc getPc() {
         return builder.getPc();
     }
 }

@@ -2,7 +2,7 @@ package com.data2.coding4j;
 
 /**
  * 对象创建初始化顺序
- *
+ * <p>
  * 1、父类静态代码
  * 2、子类静态代码
  * 3、父类非静态代码块
@@ -15,28 +15,33 @@ public class ObjectInitOrder {
         new S();
     }
 }
-class F{
+
+class F {
     static int age = 60;
-    static{
+
+    static {
         System.out.println("父母结婚");
     }
 
     {
         System.out.println("父母喝了红酒");
     }
-    public F(){
+
+    public F() {
         System.out.println("父母嘿嘿嘿");
     }
 }
 
-class S extends F{
+class S extends F {
     static {
         System.out.println("提前给小孩子买了床");
     }
+
     {
         System.out.println("妈妈怀孕了");
     }
-    public S(){
+
+    public S() {
         System.out.println("小孩出生了");
     }
 }

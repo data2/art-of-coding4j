@@ -19,10 +19,10 @@ import java.util.concurrent.ConcurrentHashMap;
 public class ConcurrentHashMapTest {
 
     @Test
-    public void testMap(){
+    public void testMap() {
         ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap(16);
         concurrentHashMap.put("key", "val");
-        concurrentHashMap.getOrDefault("key","nb");
+        concurrentHashMap.getOrDefault("key", "nb");
 
 
     }

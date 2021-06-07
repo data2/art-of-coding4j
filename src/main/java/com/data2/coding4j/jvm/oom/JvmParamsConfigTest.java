@@ -1,5 +1,6 @@
 /**
  * FileName:   JvmParamsConfigTest.java
+ *
  * @Description JVM 参数
  * All rights Reserved, Code by Muskteer
  * Copyright MuskteerAthos@gmail.com
@@ -34,9 +35,9 @@ public class JvmParamsConfigTest {
         bytes = new byte[1 * M];  //重新申请 1M 大小的内存空间                      
         bytes = new byte[1 * M];  //再次申请 1M 大小的内存空间                     
         System.gc();
-        System.out.println();  
-        bytes = new byte[18 * M]; 
+        System.out.println();
+        bytes = new byte[18 * M];
         System.gc();
-        
+
     }
 }

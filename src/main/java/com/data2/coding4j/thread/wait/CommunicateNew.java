@@ -18,7 +18,7 @@ class InputNew implements Runnable {
         int x = 0;
         while (true) {
             synchronized (r) {
-                if (r.flag == true){
+                if (r.flag == true) {
                     try {
                         r.wait();//释放当前对象锁
                     } catch (InterruptedException e) {
@@ -50,7 +50,7 @@ class OutputNew implements Runnable {
     public void run() {
         while (true) {
             synchronized (r) {
-                if (r.flag == false){
+                if (r.flag == false) {
                     try {
                         r.wait();
                     } catch (InterruptedException e) {

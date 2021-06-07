@@ -1,5 +1,6 @@
 /**
  * FileName:   AgeRecursive.java
+ *
  * @Description TODO
  * All rights Reserved, Code by Muskteer
  * Copyright MuskteerAthos@gmail.com
@@ -21,10 +22,10 @@ public class AgeRecursive {
     }
 
     private static int calculateAge(int i) {
-        if(i == 1){
+        if (i == 1) {
             return 10;
-        }else{
-            return calculateAge(i-1) + 2;
+        } else {
+            return calculateAge(i - 1) + 2;
         }
     }
 

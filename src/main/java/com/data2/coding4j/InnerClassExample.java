@@ -1,5 +1,9 @@
 package com.data2.coding4j;
 
+interface AnonymousInnerClass {
+    void test();
+}
+
 public class InnerClassExample {
     public static void main(String[] args) {
         MemberInnerClassPeople.Address m =
@@ -20,31 +24,31 @@ public class InnerClassExample {
     }
 
 }
-class MemberInnerClassPeople{
+
+class MemberInnerClassPeople {
     String name;
-    class Address{
+
+    class Address {
         String city;
     }
 }
 
-class StaticInnerClassPeople{
+class StaticInnerClassPeople {
     String name;
-    static class Address{
+
+    static class Address {
         String city;
     }
 }
-class PartInnerClassPeople{
+
+class PartInnerClassPeople {
     String name;
 
-    void eat(){
-        class Food{
+    void eat() {
+        class Food {
             String apple;
         }
         String food = new Food().apple;
     }
-}
-
-interface AnonymousInnerClass{
-    void test();
 }
 

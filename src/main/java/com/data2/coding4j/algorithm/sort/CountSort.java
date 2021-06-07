@@ -1,5 +1,6 @@
 /**
  * FileName:   CountSort.java
+ *
  * @Description TODO
  * All rights Reserved, Code by Muskteer
  * Copyright MuskteerAthos@gmail.com
@@ -41,8 +42,9 @@ public class CountSort {
 
         return max;
     }
+
     public static void main(String[] args) {
-        countSort(new int[]{4,7,2,9,0});
+        countSort(new int[]{4, 7, 2, 9, 0});
     }
 
 }

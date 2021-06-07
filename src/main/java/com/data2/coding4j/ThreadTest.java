@@ -25,7 +25,7 @@ public class ThreadTest {
         // ExecutorService executorService1 = Executors.newCachedThreadPool();
 
         ThreadPoolExecutor pool = new ThreadPoolExecutor(
-                10,20,60, TimeUnit.SECONDS,
+                10, 20, 60, TimeUnit.SECONDS,
                 new ArrayBlockingQueue(10), new ThreadPoolExecutor.DiscardPolicy());
 
         pool.execute(new Runnable() {
@@ -42,9 +42,9 @@ public class ThreadTest {
             }
         });
 
-        Future<String> future1 = pool.submit(new Callable(){
+        Future<String> future1 = pool.submit(new Callable() {
             @Override
-            public String call(){
+            public String call() {
                 return "submit-callable";
             }
         });
@@ -52,18 +52,18 @@ public class ThreadTest {
 
         pool.shutdown();
         log.info("关闭线程池，{}", pool.isShutdown());
-        while(true){
-            if(pool.isTerminated()){
+        while (true) {
+            if (pool.isTerminated()) {
                 log.info("已经关闭线程池，{}", pool.isTerminated());
             }
         }
 
-        
+
     }
 
     @Test
-    public void testThreadStauts(){
-        log.info("{},{},{},{}",Thread.State.NEW, Thread.State.RUNNABLE, Thread.State.BLOCKED,
+    public void testThreadStauts() {
+        log.info("{},{},{},{}", Thread.State.NEW, Thread.State.RUNNABLE, Thread.State.BLOCKED,
                 Thread.State.TERMINATED);
     }
 }

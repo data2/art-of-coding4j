@@ -3,7 +3,7 @@ package com.data2.coding4j.grammar.clone.cloneable;
 /**
  * Created by wanglei on 2018/9/19.
  */
-public class Person implements Cloneable{
+public class Person implements Cloneable {
     int age;
     Address addr;
 
@@ -25,8 +25,8 @@ public class Person implements Cloneable{
 
     @Override
     protected Object clone() throws CloneNotSupportedException {
-        Person person  = (Person) super.clone();
-        person.addr  = (Address)this.addr.clone();
+        Person person = (Person) super.clone();
+        person.addr = (Address) this.addr.clone();
         return person;
     }
 }

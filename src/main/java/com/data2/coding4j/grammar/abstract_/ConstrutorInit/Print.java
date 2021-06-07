@@ -1,5 +1,6 @@
 /**
  * FileName:   Print.java
+ *
  * @Description TODO
  * All rights Reserved, Code by Muskteer
  * Copyright MuskteerAthos@gmail.com
@@ -12,8 +13,8 @@ package com.data2.coding4j.grammar.abstract_.ConstrutorInit;
  *
  */
 public class Print {
-    
-    Print(int i){
+
+    Print(int i) {
         System.out.println(i);
     }
 }

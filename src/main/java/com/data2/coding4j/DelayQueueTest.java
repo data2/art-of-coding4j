@@ -15,16 +15,14 @@ import java.util.concurrent.TimeUnit;
  * @author leewow
  * @description
  * @date 2020/9/3 上午10:16
- *
+ * <p>
  * DelayQueue这是一个无界的延时阻塞队列.
  * DelayQueue内部是使用优先级队列PriorityQueue实现的,使用时间来做优先级的延时阻塞队列
  * DelayQueue = BlockingQueue + PriorityQueue + Delayed
  * 使用场景：
- *      1、设计一个缓存系统
- *      2、设计一个定时任务
- *      3、实现订单超时关闭
- *
- *
+ * 1、设计一个缓存系统
+ * 2、设计一个定时任务
+ * 3、实现订单超时关闭
  */
 @RunWith(SpringRunner.class)
 @Slf4j
@@ -68,14 +66,14 @@ public class DelayQueueTest {
 
         @Override
         public long getDelay(TimeUnit unit) {
-            return unit.convert(delayTime - System.currentTimeMillis(),TimeUnit.MILLISECONDS);
+            return unit.convert(delayTime - System.currentTimeMillis(), TimeUnit.MILLISECONDS);
         }
 
         @Override
         public int compareTo(Delayed o) {
-            if(this.getDelay(TimeUnit.MILLISECONDS) < o.getDelay(TimeUnit.MILLISECONDS))
+            if (this.getDelay(TimeUnit.MILLISECONDS) < o.getDelay(TimeUnit.MILLISECONDS))
                 return -1;
-            else if(this.getDelay(TimeUnit.MILLISECONDS) > o.getDelay(TimeUnit.MILLISECONDS)) {
+            else if (this.getDelay(TimeUnit.MILLISECONDS) > o.getDelay(TimeUnit.MILLISECONDS)) {
                 return 1;
             } else {
                 return 0;

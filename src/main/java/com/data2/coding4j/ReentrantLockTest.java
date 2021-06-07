@@ -96,32 +96,32 @@ public class ReentrantLockTest {
         Condition produceCondition = reentrantLock.newCondition();
         Condition consumerCondition = reentrantLock.newCondition();
 
-        ThreadPoolExecutor pool = new ThreadPoolExecutor(2,5,
-                30,TimeUnit.SECONDS, new ArrayBlockingQueue<>(10), new ThreadPoolExecutor.DiscardPolicy());
+        ThreadPoolExecutor pool = new ThreadPoolExecutor(2, 5,
+                30, TimeUnit.SECONDS, new ArrayBlockingQueue<>(10), new ThreadPoolExecutor.DiscardPolicy());
 
         // 生产者
         pool.submit(new Runnable() {
             @Override
             public void run() {
-                while (true){
-                    try{
+                while (true) {
+                    try {
                         reentrantLock.lock();
                         // not full, put
-                        if (queue.size() < 10 ){
+                        if (queue.size() < 10) {
                             try {
                                 Integer val = Integer.valueOf(random.nextInt(10));
                                 queue.put(val);
-                                log.info("生产：{}",val );
+                                log.info("生产：{}", val);
                                 // 生产完 signal 消费者
                                 consumerCondition.signalAll();
                             } catch (InterruptedException e) {
                                 e.printStackTrace();
                             }
-                        }else {
+                        } else {
                             produceCondition.await();
                         }
-                    }catch (Exception e){
-                    }finally {
+                    } catch (Exception e) {
+                    } finally {
                         reentrantLock.unlock();
                     }
                 }
@@ -132,20 +132,20 @@ public class ReentrantLockTest {
         pool.submit(new Runnable() {
             @Override
             public void run() {
-                while(true){
-                    try{
+                while (true) {
+                    try {
                         reentrantLock.lock();
                         // not empty take
-                        if (!queue.isEmpty()){
-                            log.info("消费：{}",queue.take());
+                        if (!queue.isEmpty()) {
+                            log.info("消费：{}", queue.take());
                             // 消费完 signal 生产者
                             produceCondition.signalAll();
-                        }else {
+                        } else {
                             consumerCondition.await();
                         }
 
-                    }catch (Exception e){
-                    }finally {
+                    } catch (Exception e) {
+                    } finally {
                         reentrantLock.unlock();
                     }
                 }

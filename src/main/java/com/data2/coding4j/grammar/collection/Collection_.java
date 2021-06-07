@@ -5,7 +5,6 @@ import org.junit.Test;
 import java.util.*;
 
 /**
- * 
  * List是有序的Collection，使用此接口能够精确的控制每个元素插入的位置。<br/>
  * 实现List接口的常用类有LinkedList，ArrayList，Vector和Stack。<br/>
  * <br/>
@@ -31,7 +30,7 @@ import java.util.*;
  * <br/>
  * HashMap和Hashtable类似，不同之处在于HashMap是非同步的，并且允许null，即null value和null key。<br/>
  * <br/>
- * 
+ * <p>
  * <hr/>
  * 如果涉及到堆栈，队列等操作，应该考虑用List，对于需要快速插入，删除元素，应该使用LinkedList，如果需要快速随机访问元素，
  * 应该使用ArrayList<br/>
@@ -42,7 +41,7 @@ import java.util.*;
  * 这就是针对抽象编程。<br/>
  */
 public class Collection_ {
-    
+
     @Test
     @SuppressWarnings("unused")
     public void testCollection() {
@@ -56,14 +55,14 @@ public class Collection_ {
         set = new HashSet<String>();
         set = new LinkedHashSet<String>();
     }
-    
+
     @Test
     @SuppressWarnings("unused")
     public void testQueue() {
         Queue<String> q = new PriorityQueue<String>();
         Deque<String> d = new LinkedList<String>();
     }
-    
+
     @Test
     @SuppressWarnings("unused")
     public void testList() {
@@ -71,12 +70,12 @@ public class Collection_ {
         list = new LinkedList<String>();
         list = new Vector<String>();
         list = new Stack<String>();
-        
+
         LinkedList<String> linkedList = new LinkedList<String>();
         ListIterator<String> it = linkedList.listIterator();//可以向前 或者 向后遍历
-        
+
         Vector<String> v = new Vector<String>();
-        
+
         Stack<String> stack = new Stack<String>();
         System.out.println(stack.size());
         stack.push("sd");

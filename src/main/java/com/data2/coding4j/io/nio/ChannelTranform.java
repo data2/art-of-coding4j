@@ -1,5 +1,6 @@
 /**
  * FileName:   ChannelTranform.java
+ *
  * @Description TODO
  * All rights Reserved, Code by Muskteer
  * Copyright MuskteerAthos@gmail.com
@@ -19,19 +20,19 @@ public class ChannelTranform {
 
     /**
      * @param args
-     * @throws IOException 
+     * @throws IOException
      */
     public static void main(String[] args) throws IOException {
         @SuppressWarnings("resource")
         RandomAccessFile fromFile = new RandomAccessFile("fromFile.txt", "rw");
-        FileChannel      fromChannel = fromFile.getChannel();
+        FileChannel fromChannel = fromFile.getChannel();
 
         @SuppressWarnings("resource")
         RandomAccessFile toFile = new RandomAccessFile("toFile.txt", "rw");
-        FileChannel      toChannel = toFile.getChannel();
+        FileChannel toChannel = toFile.getChannel();
 
         long position = 0;
-        long count    = fromChannel.size();
+        long count = fromChannel.size();
 
         toChannel.transferFrom(fromChannel, position, count);
 

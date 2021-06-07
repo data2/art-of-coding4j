@@ -1,5 +1,6 @@
 /**
  * FileName:   SwapAlgorithm.java
+ *
  * @Description TODO
  * All rights Reserved, Code by Muskteer
  * Copyright MuskteerAthos@gmail.com
@@ -21,11 +22,11 @@ import org.junit.Test;
 public class PrimeAlgorithm {
 
     @Test
-    public void judgePrime(){
+    public void judgePrime() {
         int n = 100;
-        if(n > 1){
-            for(int i = 1; i <= Math.sqrt(n) ; i ++){
-                if(n % i == 0){
+        if (n > 1) {
+            for (int i = 1; i <= Math.sqrt(n); i++) {
+                if (n % i == 0) {
                     System.out.println("no");
                     return;
                 }

@@ -1,5 +1,6 @@
 /**
  * FileName:   Map_.java
+ *
  * @Description TODO
  * All rights Reserved, Code by Muskteer
  * Copyright MuskteerAthos@gmail.com
@@ -14,16 +15,16 @@ import java.util.IdentityHashMap;
 import java.util.TreeMap;
 
 public class Map_ {
-    
-    
+
+
     @Test
     public void testHashMap() {
         HashMap<String, String> map = new HashMap<String, String>();
         map.put("key", "value");
         map.put(null, null);
     }
-    
-    
+
+
     @Test
     public void testTreeMap() {
         TreeMap<String, String> map = new TreeMap<String, String>();
@@ -33,7 +34,7 @@ public class Map_ {
         map.put("A", "A");
         System.out.println(map);
     }
-    
+
     @Test
     public void testIdentityHashMap() {
         IdentityHashMap<String, Object> identity = new IdentityHashMap<String, Object>();
@@ -41,7 +42,7 @@ public class Map_ {
         identity.put("1", s);
         identity.put("2", s);
         System.out.println(identity.get("1") == identity.get("2"));
-        
+
         HashMap<String, Object> map = new HashMap<String, Object>();
         map.put("1", s);
         map.put("2", s);

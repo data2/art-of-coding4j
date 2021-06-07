@@ -1,5 +1,6 @@
 /**
  * FileName:   BucketSort.java
+ *
  * @Description 桶排序
  * All rights Reserved, Code by Muskteer
  * Copyright MuskteerAthos@gmail.com
@@ -47,7 +48,7 @@ public class BucketSort {
 
     /**
      * 映射函数
-     * 
+     *
      * @param x
      * @return
      */

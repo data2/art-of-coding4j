@@ -1,5 +1,6 @@
 /**
  * FileName:   StackOOMTest.java
+ *
  * @Description TODO
  * All rights Reserved, Code by Muskteer
  * Copyright MuskteerAthos@gmail.com
@@ -13,25 +14,25 @@ package com.data2.coding4j.jvm.oom;
  */
 public class StackOOMTest {
 
+    public static void main(String[] args) {
+        new StackOOMTest().stackLeakByThread();
+    }
+
     private void dontStop() {
         while (true) {
         }
     }
 
-    public void stackLeakByThread(){
-        while(true){
-            Thread thread=new Thread(new Runnable(){
+    public void stackLeakByThread() {
+        while (true) {
+            Thread thread = new Thread(new Runnable() {
                 @Override
-                public void run(){
+                public void run() {
                     dontStop();
                 }
-                
+
             });
             thread.start();
-         }
-       }
-
-    public static void main(String[] args) {
-        new StackOOMTest().stackLeakByThread();
+        }
     }
 }

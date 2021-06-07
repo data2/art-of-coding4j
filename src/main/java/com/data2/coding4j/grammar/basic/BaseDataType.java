@@ -5,9 +5,8 @@ import org.junit.Test;
 
 /**
  * 8个基本数据类型 byte short int long float double char boolean
- * 
- * @author wanglei
  *
+ * @author wanglei
  */
 public class BaseDataType {
 
@@ -28,7 +27,7 @@ public class BaseDataType {
         System.out.println(bytes[4]);
 
         byte zeroByte = bytes[0];
-        Assert.assertEquals(new String(new byte[] { zeroByte }), "w");
+        Assert.assertEquals(new String(new byte[]{zeroByte}), "w");
 
         // 取值范围
         byte maxByte = 127;// 2^7-1
@@ -47,8 +46,8 @@ public class BaseDataType {
         Assert.assertEquals(minShort, Short.MIN_VALUE);
         Assert.assertEquals(maxShort, Short.MAX_VALUE);
         // short占2个字节 ， 16位
-        
-        short s = 1; 
+
+        short s = 1;
         //s = s + 1;//cannot convert from int to short
         s += 1; //编译器特殊处理
     }
@@ -66,7 +65,7 @@ public class BaseDataType {
 
         /**在计算机中最高位为符号位，0表示正数，1表示负数。
          * 在计算机中数据是使用其补码表示的，但正数补码是其本身，负数的补码是负数的源码取反加一得到的补码。
-         * 
+         *
          * 【正数】的原码、反码、补码都相等 
          * 【负数】的原码是其本身，负数的反码是将符号不变，把符号后边的数取反，对于负数的补码 是把原码取反后加1 **/
         int i = Integer.MAX_VALUE + 2;
@@ -85,7 +84,7 @@ public class BaseDataType {
         // int 占8个字节，64位
         long maxLong = 9223372036854775807L;// 2^63-1
         long minLong = -9223372036854775808L;// -2^63
-        
+
         long maxLong2 = (1 << 63) - 1;
         System.out.println(Math.pow(2, 63));//浮点数计算不准确
         System.out.println(Long.MAX_VALUE - maxLong2);//0
@@ -98,14 +97,14 @@ public class BaseDataType {
     /**
      * 程序中应尽量避免浮点数的比较 float、double类型的运算往往都不准确。
      * 在《Effective Java》这本书中也提到这个原则，float和double只能用来做科学计算或者是工程计算
-     * 
+     * <p>
      * 在商业计算中我们要用java.math.BigDecimal。 原来我们如果需要精确计算，非要用String来够造BigDecimal不可！
-     * 
+     * <p>
      * float和double是java的基本类型，用于浮点数表示，在java中float占4个字节32位，double占8个字节64位。
-     * 一般比较适合用于工程测量计算中，其在内存里的存储结构如下： 
+     * 一般比较适合用于工程测量计算中，其在内存里的存储结构如下：
      * float： 符号位（1 bit） 指数（8 bit） 尾数（23 bit）
      * double： 符号位（1 bit） 指数（11 bit） 尾数（52 bit）
-     * 
+     * <p>
      * float、double并不能准确表示每一位小数，对于有的小数只能无限趋向它（所以有的数运行正常，有的数不正常）
      */
     @Test
@@ -134,7 +133,7 @@ public class BaseDataType {
         double minDouble = Double.MIN_VALUE;// -2^1024
 
         /** java默认精度数值都是double，精度高 占内存**/
-        
+
         // 各种数据紊乱
         double dd = 1.0 - 0.9;
         System.out.println(dd);
@@ -147,7 +146,7 @@ public class BaseDataType {
         // 占2个字节 16位
         char a = 97;
         System.out.println(a);
-        
+
         /**
          * java中的char类型是用两个字节来表示，使用的是Unicode编码，所以可以正常表示中文字符。
          * 两个字节一共十六位，又因为没有符号位，都是数值位的原因，所以表值范围是从：0 ~ 2^16-1
@@ -163,7 +162,7 @@ public class BaseDataType {
     /**
      * Java是一个近乎纯洁的面向对象编程语言，但是为了编程的方便还是引入了基本数据类型，
      * 但是为了能够将这些基本数据类型当成对象操作，Java为每一个基本数据类型都引入了对应的包装类型（wrapper class）
-     * 
+     * <p>
      * 从Java 5开始引入了自动装箱/拆箱机制，使得二者可以相互转换。 Java 为每个原始类型提供了包装类型： - 原始类型:
      * boolean，char，byte，short，int，long，float，double -
      * 包装类型：Boolean，Character，Byte，Short，Integer，Long，Float，Double

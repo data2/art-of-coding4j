@@ -13,7 +13,7 @@ import java.util.Queue;
  * @author leewow
  * @description
  * @date 2020/9/12 上午11:18
- *
+ * <p>
  * 堆 - priorityQueue实现
  */
 @RunWith(SpringRunner.class)
@@ -50,7 +50,7 @@ public class HeapPriorityQueueSort {
 
 
         // 输出排序
-        for(int x : res){
+        for (int x : res) {
             System.out.println(x);
         }
     }

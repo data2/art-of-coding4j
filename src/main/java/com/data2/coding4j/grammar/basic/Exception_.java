@@ -22,12 +22,20 @@ import java.io.IOException;
  * 应该被修复，出现此类错误时程序就应该立即停止执行<br/>
  * 面对Errors和unchecked
  * exceptions应该让程序自动终止执行，程序员不该做诸如try/catch这样的事情，而是应该查明原因，修改代码逻辑。
- * 
- * 
- * 
- *
  */
 public class Exception_ {
+
+    public static void main(String[] args) {
+        try {
+            throw new IOException();
+        } catch (FileNotFoundException ex) {
+            System.out.print("FileNotFoundException!");
+        } catch (IOException ex) {
+            System.out.print("IOException!");
+        } catch (Exception ex) {
+            System.out.print("Exception!");
+        }
+    }
 
     @Test
     public void test() {
@@ -42,17 +50,5 @@ public class Exception_ {
         }
         return 0;
 
-    }
-
-    public static void main(String[] args) {
-        try {
-            throw new IOException();
-        } catch (FileNotFoundException ex) {
-            System.out.print("FileNotFoundException!");
-        } catch (IOException ex) {
-            System.out.print("IOException!");
-        } catch (Exception ex) {
-            System.out.print("Exception!");
-        }
     }
 }

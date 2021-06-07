@@ -11,9 +11,9 @@ import java.util.concurrent.TimeUnit;
  * Created by wanglei on 2016/10/12.
  * guava cache.
  */
-public class GuavaCache extends ParentCollection{
+public class GuavaCache extends ParentCollection {
     @Test
-    public void cache(){
+    public void cache() {
         LoadingCache<String, String> cache = CacheBuilder.newBuilder()
                 //1、基于容量的回收（size-based eviction）
                 //如果要规定缓存项的数目不超过固定值，只需使用 CacheBuilder.maximumSize(long)。
@@ -71,11 +71,6 @@ public class GuavaCache extends ParentCollection{
 //        } catch (ExecutionException e) {
 //            e.printStackTrace();
 //        }
-
-
-
-
-
 
 
     }

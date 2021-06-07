@@ -1,5 +1,6 @@
 /**
  * FileName:   HanoiTower.java
+ *
  * @Description 汉诺塔问题
  * All rights Reserved, Code by Muskteer
  * Copyright MuskteerAthos@gmail.com
@@ -23,7 +24,7 @@ public class HanoiTower {
 
     // 递归实现汉诺塔的函数
     public static void hanoi(int n, char A, char B, char C) {
-        if (n == 1){// 圆盘只有一个时，只需将其从A塔移到C塔
+        if (n == 1) {// 圆盘只有一个时，只需将其从A塔移到C塔
             move(1, A, C);
         } else {
             hanoi(n - 1, A, C, B);// 递归，把A塔上编号1~n-1的圆盘移到B上，以C为辅助塔

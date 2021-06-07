@@ -1,5 +1,6 @@
 /**
  * FileName:   House.java
+ *
  * @Description TODO
  * All rights Reserved, Code by Muskteer
  * Copyright MuskteerAthos@gmail.com
@@ -9,9 +10,8 @@ package com.data2.coding4j.designpatterns.struts.decorator;
 
 /**
  * @author wanglei
- *
  */
-public class House implements Decorator{
+public class House implements Decorator {
 
     @Override
     public void decorate() {

@@ -18,7 +18,7 @@ public class ReflectionExample {
         f2.set(obj, "19");
         System.out.println(obj.getAge());
 
-        Method m = Obj.class.getDeclaredMethod("setAge",String.class);
+        Method m = Obj.class.getDeclaredMethod("setAge", String.class);
         m.invoke(obj, "20");
         System.out.println(obj.getAge());
 
@@ -26,13 +26,9 @@ public class ReflectionExample {
     }
 }
 
-class Obj{
-    private String name;
+class Obj {
     public String age;
-
-    public void setAge(String age) {
-        this.age = age;
-    }
+    private String name;
 
     public String getName() {
         return name;
@@ -40,5 +36,9 @@ class Obj{
 
     public String getAge() {
         return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
     }
 }

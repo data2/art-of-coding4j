@@ -1,5 +1,6 @@
 /**
  * FileName:   PolyConstructors.java
+ *
  * @Description 类的初始化  顺序
  * All rights Reserved, Code by Muskteer
  * Copyright MuskteerAthos@gmail.com
@@ -25,17 +26,19 @@ class Print {
 }
 
 abstract class Glyph {
-    abstract void draw();
+    static Print p3 = new Print("父类静态成员变量");
+    static Print p6 = new Print("父类静态成员变量", Math.random());
 
     static {
         System.out.println("父类静态块1");
     }
-    static Print p3 = new Print("父类静态成员变量");
-    static Print p6 = new Print("父类静态成员变量", Math.random());
+
     static {
         System.out.println("父类静态块2");
     }
+
     Print p2 = new Print("父类成员变量");
+
     {
         System.out.println("父类代码块");
     }
@@ -46,23 +49,29 @@ abstract class Glyph {
         draw();
         System.out.println("Glyph() after draw()");
     }
+
+    abstract void draw();
 }
 
 class RoundGlyph extends Glyph {
-    int radius = 1;
-    String s = "abcdefg";
+    static Print p4 = new Print("子类静态成员变量");
+    static Print p5 = new Print("子类静态成员变量", Math.random());
+
     static {
         System.out.println("子类静态块1");
     }
-    static Print p4 = new Print("子类静态成员变量");
-    static Print p5 = new Print("子类静态成员变量", Math.random());
+
     static {
         System.out.println("子类静态块2");
     }
+
+    int radius = 1;
+    String s = "abcdefg";
+    Print p1 = new Print("子类成员变量");
+
     {
         System.out.println("子类代码块");
     }
-    Print p1 = new Print("子类成员变量");
 
     RoundGlyph(int r) {
         System.out.println("子类构造方法");

@@ -1,5 +1,6 @@
 /**
  * FileName:   JavaBindingTest.java
+ *
  * @Description java 动态绑定 静态绑定
  * All rights Reserved, Code by Muskteer
  * Copyright MuskteerAthos@gmail.com

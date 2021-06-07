@@ -1,5 +1,6 @@
 /**
  * FileName:   Node.java
+ *
  * @Description TODO
  * All rights Reserved, Code by Muskteer
  * Copyright MuskteerAthos@gmail.com
@@ -12,8 +13,9 @@ package com.data2.coding4j.datastructure.list;
  *
  */
 public class Node {
-    Object  element;
+    Object element;
     Node next;
+
     public Node(Object o) {
         element = o;
     }

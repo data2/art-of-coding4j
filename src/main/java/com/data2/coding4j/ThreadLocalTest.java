@@ -16,7 +16,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @Slf4j
 public class ThreadLocalTest {
     @Test
-    public void run(){
+    public void run() {
         ThreadLocal threadLocal = new ThreadLocal();
     }
 }

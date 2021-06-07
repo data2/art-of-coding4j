@@ -10,18 +10,16 @@ import org.springframework.test.context.junit4.SpringRunner;
  * @author leewow
  * @description
  * @date 2020/9/9 下午1:20
- *
+ * <p>
  * 抽象工厂模式：
- *      抽象工厂模式与工厂方法模式最大的区别：抽象工厂中每个工厂可以创建多种类的产品；而工厂方法每个工厂只能创建一类
- *
- *
+ * 抽象工厂模式与工厂方法模式最大的区别：抽象工厂中每个工厂可以创建多种类的产品；而工厂方法每个工厂只能创建一类
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @Slf4j
 public class AbstractFactoryPatternTest {
     @Test
-    public void t(){
+    public void t() {
         IdeaFactory ideaFactory = new IdeaFactory();
         Idea idea = ideaFactory.createDev();
         IdeaJshell ideaJshell = ideaFactory.createTest();
@@ -32,14 +30,14 @@ public class AbstractFactoryPatternTest {
 
     }
 
-    abstract class Tool{
+    abstract class Tool {
         abstract void tool();
     }
 
-    abstract class DevTool extends Tool{
+    abstract class DevTool extends Tool {
     }
 
-    abstract class TestTool extends Tool{
+    abstract class TestTool extends Tool {
     }
 
     // 两层 产品维度
@@ -76,8 +74,9 @@ public class AbstractFactoryPatternTest {
     }
 
     // 工厂
-    abstract class Factory{
+    abstract class Factory {
         abstract DevTool createDev();
+
         abstract TestTool createTest();
     }
 

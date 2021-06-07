@@ -12,7 +12,7 @@ import java.util.HashSet;
  * @author leewow
  * @description
  * @date 2020/9/12 上午11:18
- *
+ * <p>
  * set 基本操作
  */
 @RunWith(SpringRunner.class)
@@ -20,7 +20,7 @@ import java.util.HashSet;
 @Slf4j
 public class HashSetTest {
     @Test
-    public void test(){
+    public void test() {
         HashSet<Integer> set = new HashSet();
         set.add(2);
         set.contains(2);

@@ -3,7 +3,7 @@ package com.data2.coding4j.grammar.clone.cloneable;
 /**
  * Created by wanglei on 2018/9/19.
  */
-public class Address implements Cloneable{
+public class Address implements Cloneable {
     String addr;
 
     public Address(String addr) {

@@ -24,9 +24,9 @@ public class SemaphoreTest {
     public void test() throws InterruptedException {
         // 数据库连接数 假设=2
         Semaphore semaphore = new Semaphore(2);
-        new Thread(new Runnable(){
+        new Thread(new Runnable() {
             @Override
-            public void run(){
+            public void run() {
 
                 try {
                     semaphore.acquire();
@@ -44,9 +44,9 @@ public class SemaphoreTest {
 
             }
         }).start();
-        new Thread(new Runnable(){
+        new Thread(new Runnable() {
             @Override
-            public void run(){
+            public void run() {
 
                 try {
                     semaphore.acquire();
@@ -64,9 +64,9 @@ public class SemaphoreTest {
 
             }
         }).start();
-        new Thread(new Runnable(){
+        new Thread(new Runnable() {
             @Override
-            public void run(){
+            public void run() {
 
                 try {
                     semaphore.acquire();

@@ -29,7 +29,7 @@ public final class MuskteerLists {
         return (List<List<C>>) list;
     }
 
-    public <D> void tt(D t){
+    public <D> void tt(D t) {
         @SuppressWarnings("unused")
         Class<? extends Object> cls = t.getClass();
     }

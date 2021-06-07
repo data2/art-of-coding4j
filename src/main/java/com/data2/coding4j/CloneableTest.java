@@ -11,12 +11,11 @@ import org.springframework.test.context.junit4.SpringRunner;
  * @author leewow
  * @description
  * @date 2020/9/7 下午10:10
- *
+ * <p>
  * 深拷贝、浅拷贝
- *      1、对象实现Cloneable克隆接口
- *      2、对象的引用类型属性也要实现Cloneable接口
- *      3、对象super.clone(),this.子对象.clone()
- *
+ * 1、对象实现Cloneable克隆接口
+ * 2、对象的引用类型属性也要实现Cloneable接口
+ * 3、对象super.clone(),this.子对象.clone()
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -24,8 +23,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class CloneableTest {
 
     @Test
-    public void test(){
-        Person older = new Person("tom",new Addr("上海"));
+    public void test() {
+        Person older = new Person("tom", new Addr("上海"));
         Person newer = older.clone();
         newer.setName("trump");
         newer.getAddr().setCity("北京");
@@ -37,17 +36,17 @@ public class CloneableTest {
     }
 
     @Data
-    class Person implements Cloneable{
+    class Person implements Cloneable {
         String name;
         Addr addr;
 
-        Person(String name, Addr addr){
+        Person(String name, Addr addr) {
             this.name = name;
             this.addr = addr;
         }
 
         @Override
-        public Person clone(){
+        public Person clone() {
             Person person = null;
             try {
                 person = (Person) super.clone();
@@ -61,16 +60,17 @@ public class CloneableTest {
     }
 
     @Data
-    class Addr implements Cloneable{
+    class Addr implements Cloneable {
         String city;
-        Addr(String city){
+
+        Addr(String city) {
             this.city = city;
         }
 
         @Override
-        public Addr clone(){
+        public Addr clone() {
             try {
-                return (Addr)super.clone();
+                return (Addr) super.clone();
             } catch (CloneNotSupportedException e) {
                 e.printStackTrace();
             }

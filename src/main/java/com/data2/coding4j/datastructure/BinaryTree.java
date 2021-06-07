@@ -17,6 +17,14 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class BinaryTree {
 
     /**
+     * 计算叶子节点的大小
+     *
+     * @param treeNode
+     * @return
+     */
+    int total;
+
+    /**
      * *                  8
      * *          9              10
      * *              1
@@ -35,7 +43,6 @@ public class BinaryTree {
         log.info("二叉树的叶子节点数：{}", leafNodeSize(root));
 
     }
-
 
     /**
      * 计算二叉树的高度
@@ -66,14 +73,6 @@ public class BinaryTree {
             return 1 + nodeSize(treeNode.getLeft()) + nodeSize(treeNode.getRight());
         }
     }
-
-    /**
-     * 计算叶子节点的大小
-     *
-     * @param treeNode
-     * @return
-     */
-    int total;
 
     public int leafNodeSize(TreeNode treeNode) {
         if (treeNode == null) {

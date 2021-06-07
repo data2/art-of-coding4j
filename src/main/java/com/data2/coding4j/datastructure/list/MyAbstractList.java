@@ -1,5 +1,6 @@
 /**
  * FileName:   MyAbstractList.java
+ *
  * @Description TODO
  * All rights Reserved, Code by Muskteer
  * Copyright MuskteerAthos@gmail.com
@@ -21,7 +22,7 @@ public abstract class MyAbstractList implements MyList {
 
     @Override
     public void add(Object o) {
-        add(size,o);
+        add(size, o);
     }
 
     @Override

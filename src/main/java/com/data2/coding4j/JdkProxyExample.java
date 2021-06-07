@@ -4,6 +4,10 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
+interface Eat {
+    void eat();
+}
+
 public class JdkProxyExample {
 
     //jdk动态代理运用的是java的反射机制，借用的java 代理类Proxy和InvocationHandler处理类，
@@ -12,7 +16,7 @@ public class JdkProxyExample {
     //针对类：cglib（asm字节码增强器 需要依赖cglib类库）- 对代理对象类的class文件加载进来，通过修改其字节码生成子类来处理
     public static void main(String[] args) {
         final People person = new People();
-        Eat eat = (Eat)Proxy.newProxyInstance(
+        Eat eat = (Eat) Proxy.newProxyInstance(
                 JdkProxyExample.class.getClassLoader(),
                 person.getClass().getInterfaces(),
                 new InvocationHandler() {
@@ -26,11 +30,9 @@ public class JdkProxyExample {
     }
 
 }
-interface Eat{
-    void eat();
-}
-class People implements Eat{
-    public void eat(){
+
+class People implements Eat {
+    public void eat() {
         System.out.println("eat");
     }
 }

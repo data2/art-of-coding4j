@@ -18,7 +18,7 @@ public class ReentrantLockConditionImpl {
     public static void main(String[] args) {
         ExecutorService es = Executors.newFixedThreadPool(10);
         ReentrantLockConditionImpl obj = new ReentrantLockConditionImpl();
-        for(int i=0;i<10;i++){
+        for (int i = 0; i < 10; i++) {
             es.submit(obj.new Producer());
             es.submit(obj.new Consumer());
         }
@@ -26,7 +26,11 @@ public class ReentrantLockConditionImpl {
 
     }
 
-    class Producer implements  Runnable {
+    public static PriorityQueue<String> getQueue() {
+        return queue;
+    }
+
+    class Producer implements Runnable {
 
         @Override
         public void run() {
@@ -37,7 +41,7 @@ public class ReentrantLockConditionImpl {
                     producer.await();
                 }
                 queue.offer("s");
-                System.out.println("producer:"+"s");
+                System.out.println("producer:" + "s");
                 consumer.signalAll();
                 System.out.println("producer signal all");
             } catch (Exception e) {
@@ -47,26 +51,22 @@ public class ReentrantLockConditionImpl {
         }
     }
 
-    class  Consumer implements Runnable{
-        public void run(){
+    class Consumer implements Runnable {
+        public void run() {
             lock.lock();
             System.out.println("consumer lock");
-            try{
-                while (queue.size() == 0){
+            try {
+                while (queue.size() == 0) {
                     consumer.await();
                 }
-                System.out.println("consumer:"+queue.poll());
+                System.out.println("consumer:" + queue.poll());
                 producer.signalAll();
                 System.out.println("consumer signal all");
-            }catch (Exception e){
+            } catch (Exception e) {
                 lock.unlock();
             }
             System.out.println("consumer unlock");
         }
-    }
-
-    public static PriorityQueue<String> getQueue() {
-        return queue;
     }
 
 }

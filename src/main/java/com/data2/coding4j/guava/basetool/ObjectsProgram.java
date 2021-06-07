@@ -6,11 +6,10 @@ import org.junit.Test;
 
 /**
  * Created by wanglei on 2016/10/12.
- *
  */
 public class ObjectsProgram {
     @Test
-    public void objects(){
+    public void objects() {
         //equal
         Preconditions.checkArgument(Objects.equal("a", "a"));
 //        Preconditions.checkArgument(Objects.equal(null, "a"));
