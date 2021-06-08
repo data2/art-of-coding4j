@@ -47,10 +47,10 @@ public class BST {
             insert(root, random.nextInt(50));
         }
 
-        midTraversal(root);
+        preTraversal(root);
 
 
-        midTraversal(delete(root, 25));
+        //midTraversal(delete(root, 25));
 
 
     }
@@ -145,8 +145,8 @@ public class BST {
      */
     public void postTraversal(TreeNode treeNode) {
         if (treeNode != null) {
-            postTraversal(treeNode.getRight());
             postTraversal(treeNode.getLeft());
+            postTraversal(treeNode.getRight());
             log.info("{}", treeNode.getValue());
 
         }
