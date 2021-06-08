@@ -9,12 +9,11 @@ package com.data2.coding4j.designpatterns.action.observer;
 import com.google.common.collect.Lists;
 
 import java.util.List;
-import java.util.Vector;
 
 /**
  * @author leewow
  */
-public class TestObserver{
+public class TestObserver {
     public static void main(String[] args) {
         Machine1 machine = new Machine1();
         machine.addObserver(new Email1());
@@ -24,6 +23,7 @@ public class TestObserver{
 }
 
 abstract class Subject {
+
     private List<Observer> obs = Lists.newArrayList();
 
     public void addObserver(Observer obs) {

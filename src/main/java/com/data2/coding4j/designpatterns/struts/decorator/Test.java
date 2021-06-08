@@ -2,11 +2,16 @@ package com.data2.coding4j.designpatterns.struts.decorator;
 
 import com.data2.coding4j.designpatterns.struts.decorator.impl.CeilDecorator;
 import com.data2.coding4j.designpatterns.struts.decorator.impl.FloorDecorator;
+import com.data2.coding4j.designpatterns.struts.decorator.impl.House;
 
 import java.io.FileNotFoundException;
 
 /**
  * 装饰器模式 _主要用于为对象动态的添加功能_。
+ *
+ * 装饰器模式不是要改变被装饰对象的接口，而恰恰要保持原有的接口，但是增强原有对象的功能，或者改变原有对象的处理方法而提高性能。
+ *
+ *
  * <p>
  * 在学习 Java IO 的时候，记得头几回看到下面的代码，总是有点纳闷：
  * InputStream inputStream = new BufferedInputStream(new FileInputStream(filePath));
@@ -18,13 +23,10 @@ import java.io.FileNotFoundException;
  * 装饰器模式就是基于对象组合的方式，可以很灵活的给对象添加所需要的功能。装饰器模式的本质就是动态组合。动态是手段，组合才是目的。
  * 总之，装饰模式是通过把复杂的功能简单化，分散化，然后再运行期间，根据需要来动态组合的这样一个模式。
  */
-public class Main {
+public class Test {
 
     public static void main(String[] args) throws FileNotFoundException {
-        Decorator d =
-                new FloorDecorator(
-                        new CeilDecorator(
-                                new House()));
+        Decorator d = new FloorDecorator( new CeilDecorator( new House()));
         d.decorate();
 
 //		BufferedWriter bw = 

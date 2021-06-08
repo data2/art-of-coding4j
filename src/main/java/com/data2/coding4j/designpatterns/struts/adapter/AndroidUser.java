@@ -31,7 +31,7 @@ public class AndroidUser {
 
         //切换ios充电器
         IosCharger iosCharger = new IosChargeImpl();
-        Adapter adapter = new Adapter(iosCharger);
+        AndroidAdapter adapter = new AndroidAdapter(iosCharger);
         AndroidUser user = new AndroidUser(adapter);
         user.charge();
     }

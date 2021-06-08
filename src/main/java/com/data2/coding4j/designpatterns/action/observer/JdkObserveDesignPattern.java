@@ -22,12 +22,6 @@ public class JdkObserveDesignPattern {
  */
 class Machine extends Observable {
 
-    public void bark() {
-        System.out.println("wolf barking..");
-        this.setChanged();
-        this.notifyObservers();
-    }
-
     public void except() {
         System.out.println("主机异常");
         this.setChanged();

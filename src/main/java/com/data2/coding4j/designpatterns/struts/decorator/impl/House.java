@@ -6,7 +6,9 @@
  * Copyright MuskteerAthos@gmail.com
  * @author MuskteerAthos
  */
-package com.data2.coding4j.designpatterns.struts.decorator;
+package com.data2.coding4j.designpatterns.struts.decorator.impl;
+
+import com.data2.coding4j.designpatterns.struts.decorator.Decorator;
 
 /**
  * @author wanglei

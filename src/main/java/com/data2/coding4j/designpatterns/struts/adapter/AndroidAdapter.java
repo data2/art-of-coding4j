@@ -1,17 +1,19 @@
 package com.data2.coding4j.designpatterns.struts.adapter;
 
-public class Adapter implements AndroidCharger {
+/**
+ * @author data2
+ */
+public class AndroidAdapter implements AndroidCharger {
 
     private IosCharger iosCharger;
 
-    public Adapter(IosCharger iosCharger) {
+    public AndroidAdapter(IosCharger iosCharger) {
         this.iosCharger = iosCharger;
     }
 
     @Override
     public void charge() {
         iosCharger.charge();
-
     }
 
 }
