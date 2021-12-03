@@ -1,19 +1,18 @@
 package com.data2.coding4j.designpatterns.create.singleton;
 
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.*;
 
 public enum SingletonEnum {
     SINGLETON_ENUM;
     static int i = 0;
 
     public static void main(String[] args) throws InterruptedException {
-        ExecutorService es = Executors.newFixedThreadPool(10);
+
+        ThreadPoolExecutor threadPoolExecutor = new ScheduledThreadPoolExecutor(10);
         final CountDownLatch latch = new CountDownLatch(800);
         final SingletonEnum instance = SingletonEnum.SINGLETON_ENUM;
         for (int j = 0; j < 800; j++) {
-            es.submit(new Runnable() {
+            threadPoolExecutor.submit(new Runnable() {
                 @Override
                 public void run() {
 //                    System.out.println(instance == SingletonEnum.SINGLETON_ENUM);

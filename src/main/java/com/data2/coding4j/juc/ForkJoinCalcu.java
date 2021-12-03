@@ -19,37 +19,36 @@ public class ForkJoinCalcu {
         System.out.println(re);
     }
 
-}
+    static class SumTask extends RecursiveTask<Integer> {
 
-class SumTask extends RecursiveTask<Integer> {
+        private static final long serialVersionUID = 1L;
 
-    private static final long serialVersionUID = 1L;
+        int from;
+        int to;
 
-    int from;
-    int to;
-
-    public SumTask(int from, int to) {
-        this.from = from;
-        this.to = to;
-    }
-
-    @Override
-    protected Integer compute() {
-        if (to - from < 6) {
-            return (to + from) / 2 * (to - from);
+        public SumTask(int from, int to) {
+            this.from = from;
+            this.to = to;
         }
-        int isInteger = (to + from) % 2;
-        int middle = 0;
-        if (isInteger == 1) {
-            middle = (to + from - 1) / 2;
-        } else {
-            middle = (to + from) / 2;
-        }
-        SumTask task1 = new SumTask(from, middle);
-        SumTask task2 = new SumTask(middle, to);
-        task1.fork();
-        task2.fork();
-        return task1.join() + task2.join();
-    }
 
+        @Override
+        protected Integer compute() {
+            if (to - from < 6) {
+                return (to + from) / 2 * (to - from);
+            }
+            int isInteger = (to + from) % 2;
+            int middle = 0;
+            if (isInteger == 1) {
+                middle = (to + from - 1) / 2;
+            } else {
+                middle = (to + from) / 2;
+            }
+            SumTask task1 = new SumTask(from, middle);
+            SumTask task2 = new SumTask(middle, to);
+            task1.fork();
+            task2.fork();
+            return task1.join() + task2.join();
+        }
+
+    }
 }

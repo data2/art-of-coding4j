@@ -10,10 +10,8 @@ public class CountDownLatchExample {
     public static void main(String[] args) throws InterruptedException {
         CountDownLatch latch = new CountDownLatch(2);
 
-        new Thread(new Runnable1("爸爸")).start();
-        latch.countDown();
-        new Thread(new Runnable1("妈妈")).start();
-        latch.countDown();
+        new Thread(new Parent(latch,"爸爸")).start();
+        new Thread(new Parent(latch,"妈妈")).start();
 
         latch.await();//底层AQS实现； 调用await()方法的线程会被挂起，它会等待直到count值为0才继续执行
 
@@ -21,22 +19,26 @@ public class CountDownLatchExample {
         System.out.println("有了你");
     }
 
-}
 
-class Runnable1 implements Runnable {
-    public String name;
+    static class Parent implements Runnable {
+        private String name;
+        CountDownLatch latch;
 
-    public Runnable1(String str) {
-        name = str;
-    }
-
-    @Override
-    public void run() {
-        System.out.println("有了：" + name);
-        try {
-            Thread.currentThread().sleep(2000);
-        } catch (InterruptedException e) {
+        public Parent(CountDownLatch latch, String name) {
+            this.name = name;
+            this.latch = latch;
         }
+
+        @Override
+        public void run() {
+            System.out.println("有了：" + name);
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+            }
+            latch.countDown();
+        }
+
     }
 
 }

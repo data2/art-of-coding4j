@@ -16,7 +16,7 @@ import java.util.concurrent.*;
 @Slf4j
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class ThreadTest {
+public class ThreadPoolExecutorTest {
     @Test
     public void testThreadPool() throws InterruptedException, ExecutionException {
         // 不建议Executors创建线程池方式！ 明确线程池运行规则，避免资源耗尽。

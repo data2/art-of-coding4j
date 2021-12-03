@@ -21,6 +21,5 @@ public class ObjectsProgram {
 //        //toString
 //        System.out.println(Objects.toStringHelper("person").add("x",1).toString());
 
-
     }
 }

@@ -69,6 +69,7 @@ class SubOne extends AbstractParent {
         System.out.println("sub class override print method");
     }
 
+    @Override
     public String getName() {
         return name;
     }

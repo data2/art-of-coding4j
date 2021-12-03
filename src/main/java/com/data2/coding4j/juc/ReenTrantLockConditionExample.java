@@ -52,7 +52,7 @@ public class ReenTrantLockConditionExample {
                 reentrantLock.unlock();
             }
         }).start();
-        ;
+
     }
 
 }

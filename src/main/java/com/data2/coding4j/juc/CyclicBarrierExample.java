@@ -1,9 +1,6 @@
 package com.data2.coding4j.juc;
 
-import java.util.concurrent.BrokenBarrierException;
-import java.util.concurrent.CyclicBarrier;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.*;
 
 /**
  * CountDownLatch和CyclicBarrier都能够实现线程之间的等待，
@@ -18,42 +15,43 @@ import java.util.concurrent.Executors;
 public class CyclicBarrierExample {
     public static void main(String[] args) {
         CyclicBarrier cb = new CyclicBarrier(5, new Runnable() {
-
             @Override
             public void run() {
                 System.out.println("大家一起开会！");
             }
         });
 
-        ExecutorService es = Executors.newFixedThreadPool(20);
+        ThreadPoolExecutor pool = new ThreadPoolExecutor(5,10,60,TimeUnit.SECONDS,
+                new ArrayBlockingQueue<>(10),new ThreadPoolExecutor.DiscardOldestPolicy());
         for (int i = 0; i < 5; i++) {
-            es.submit(new MeetPerson("person-" + i, cb));
+            pool.submit(new MeetPerson("person-" + i, cb));
         }
     }
-}
 
-class MeetPerson implements Runnable {
 
-    private String name;
-    private CyclicBarrier cb;
+    static class MeetPerson implements Runnable {
 
-    public MeetPerson(String name, CyclicBarrier cb) {
-        this.name = name;
-        this.cb = cb;
-    }
+        private String name;
+        private CyclicBarrier cb;
 
-    @Override
-    public void run() {
-        /**每执行完一项任务就通知障碍器await
-         * 因为有通知，所以底层通过reentrantlock的condition实现
-         */
-        System.out.println(name + "来到了会议室");
-        try {
-            cb.await();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (BrokenBarrierException e) {
-            e.printStackTrace();
+        public MeetPerson(String name, CyclicBarrier cb) {
+            this.name = name;
+            this.cb = cb;
+        }
+
+        @Override
+        public void run() {
+            /**每执行完一项任务就通知障碍器await
+             * 因为有通知，所以底层通过reentrantlock的condition实现
+             */
+            System.out.println(name + "来到了会议室");
+            try {
+                cb.await();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (BrokenBarrierException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

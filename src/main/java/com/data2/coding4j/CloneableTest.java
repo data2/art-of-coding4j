@@ -32,7 +32,6 @@ public class CloneableTest {
         // 如果老人的地址城市改变成北京，浅拷贝
         log.info(older.toString());
 
-
     }
 
     @Data

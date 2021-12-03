@@ -18,5 +18,7 @@ public class ThreadLocalTest {
     @Test
     public void run() {
         ThreadLocal threadLocal = new ThreadLocal();
+        threadLocal.set(null);
+        threadLocal.get();
     }
 }
