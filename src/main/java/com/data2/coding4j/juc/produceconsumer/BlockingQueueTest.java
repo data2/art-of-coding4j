@@ -1,4 +1,4 @@
-package com.data2.coding4j;
+package com.data2.coding4j.juc.produceconsumer;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
  * <p>
  * 生产者消费者实现方式 - not full put; not empty take
  * 1、Synchronize & 对象的wait\notify方法
- * 2、ReentrantLock condition
+ * 2、ReentrantLock condition的awati\signal
  * 3、阻塞队列BlockingQueue
  * <p>
  * 阻塞队列分类：

@@ -29,11 +29,12 @@ public class JdkProxyExample {
         eat.eat();
     }
 
-}
 
-class People implements Eat {
-    public void eat() {
-        System.out.println("eat");
+    static class People implements Eat {
+        @Override
+        public void eat() {
+            System.out.println("eat");
+        }
     }
 }
 

@@ -1,4 +1,4 @@
-package com.data2.coding4j;
+package com.data2.coding4j.juc;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
